@@ -352,6 +352,39 @@ Graph:
 
 ![x_plus_y_equals_9.png](../media/img/x_plus_y_equals_9.png)
 
+You can see all dots make a perfect `straight line`, this line represent the infinite number of solutions for `x+y=9`, every single point on that line is a solution for the `linear equation`, it is called linear because it makes a straight line.
+
+> Sketching an equations is useful to visualize the all the ordered pairs (x,y) that conforms the equation.
+
+## Linear Equations
+
+The standard form of a linear equation is:
+
+```
+Ax + By = C
+```
+
+> Sometimes the equation is written different but it keeps the same characteristics.
+
+Where:
+
+- `A` and `B` represent coefficients.
+- `C` is a constant.
+
+Characteristics of linear equations:
+
+- Variables are raised to a power no higher than one.
+- They make a straight line graph.
+
+An example worth to review:
+
+- `x = 5.5`, yes, it is a linear equation, it may help to see it in another form just to understand why: `1x + 0y = 5.5`, reduce the equation and you will find why it is still a linear equation, this is the graph:
+  ![x_equals_5dot5.png](../media/img/x_equals_5dot5.png)\
+  Why the line is vertical this time?, answer: because all possible value for `y` are converted to 0 since the equation has `0y`, so in `(x,y)` the variable responsible to make the equation `5.5` will be `x` and `y` can have any value, in other words: `(5.5,y)` where `x` is fixed and `y` have infinite values therefore making a vertical line.
+
+You can find online graphing calculators so you can visualize your equations, example: https://www.desmos.com/calculator
+
+
 
 Systems of Linear Equations and Matrices
     Quadratic Equations and Functions
