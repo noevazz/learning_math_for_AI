@@ -264,7 +264,93 @@ For x = 2/3
                   20 = 20
 ```
 
+## Equations with Multiple Variables
 
+```
+5x-4 = 0
+```
+
+If I tell you `solve the equation above for x` then you already know you need to isolate x to find its value.
+This is pretty obvious because `x` is the only variable in the equation.
+
+What if the equation has more that one variable:
+
+```
+3(w + 4x) -10 = 6x + 7
+
+```
+
+In this case you need to carefully read what you are asked for: `solve the equation for 'y'`, since the sentence is saying `for 'y'` then you have enough to solve the equation, you just need to isolate y in one side of the equation:
+
+```
+3(w + 4x) -10 = 6x + 7
+
+first simplify:
+3w + 12x -10 = 6x + 7
+
+Now move things to the right:
+    3w + 12x = 6x + 7 + 10
+    3w + 12x = 6x + 17
+          3w = 6x - 12x + 17
+          3w = -6x + 17
+           w = (-6x + 17)3
+This can be reduced even more using fractions with the same denominator:
+           w = (-6x)/3 + 17/3
+           w = -2x + 17/3
+```
+
+There you go, you have solved the equation for `y`, the result may look a little weird but it is still valid.
+
+## The Coordinate Plane
+
+The coordinate plane, also known as the `Cartesian plane`, is a two-dimensional plane formed by two perpendicular number lines called the `x-axis` (the horizontal line) and the `y-axis` (the vertical line). These axes intersect at a point called the `origin`, usually denoted as `(0, 0)`.
+
+Coordinates on the plane are written in the form `(x, y)`, where 'x' represents the horizontal position (along the x-axis) and 'y' represents the vertical position (along the y-axis). The x-coordinate tells you how far to move horizontally from the origin, while the y-coordinate tells you how far to move vertically from the origin.
+
+`(x,y)`: These numbers are known as the `abscissa` (for x) and the `ordinate` (for y). So, what do they represent?
+
+![cartesian-plane-3-robot_ver_1.jpg](../media/img/cartesian-plane-3-robot_ver_1.jpg)
+
+The intersection of the two axes at the origin creates a cross shape, with four spaces of equal size around the axes. These spaces are called quadrants.
+
+Learn more at: https://www.twinkl.com.mx/teaching-wiki/cartesian-plane
+
+Could you tell me the coordinates (the values for x and y) to find the start?:
+
+![Cartesian_Plane_star.PNG](../media/img/Cartesian_Plane_star.PNG)
+
+Answer: the coordinates are `(2,4)`, this means 2 positive units in the x-axis and 4 positive units in the y-axis.
+
+### Sketching Equations
+
+Let's say we have this equation:
+
+```
+x+y = 9
+```
+
+If tell you to solve it for `x` then the answers is `x = 9-y` and if I tell you solve it for `y` then the answer is `y = 9-x`, but what if I told you I need both the values for `x` and `y` that makes the equation true (9), then we have infinite answers:
+
+```
+1+8 = 9
+2+7 = 9
+0+9 = 9
+3.5+5.5 = 9
+etc...
+```
+
+What if you put those values in the cartesian plane:
+
+```
+point 1: (1, 8)
+point 2: (2, 7)
+point 3: (9,0)
+point 4: (3.5, 5.5)
+```
+
+Graph:
+
+![x_plus_y_equals_9.png](../media/img/x_plus_y_equals_9.png)
 
 
 Systems of Linear Equations and Matrices

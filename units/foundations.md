@@ -68,6 +68,27 @@ In case you need to remember it: The top of a fraction is called `numerator` and
 4   8           32           32      32     32/4     8
 ```
 
+Another example:
+
+Wht if I told you I have this fraction:
+
+```
+3+6
+---
+ 2
+```
+
+You can add the value and get a single number in the numerator, but you can also split the fraction into two fractions with the same denominator:
+
+
+```
+3   6
+- + -
+2   2
+```
+
+Why? well sometimes you need need to split the addition you have in the denominator (this will be useful in algebra so keep this in your head).
+
 ### Subtraction
 
 ```
