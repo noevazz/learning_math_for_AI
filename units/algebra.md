@@ -844,7 +844,7 @@ Create two inequalities and solve them:
     2x > 5 -3                                 -2x -3 > 5
     2x > 2                                       -2x > 5 + 3
   2x/2 > 2/2                                     -2x > 8
-     x > 1        I REVERSED THE SIGN HERE👉  -2x/-2 > 8/-2
+     x > 1        I REVERSED THE SIGN HERE👉  -2x/-2 < 8/-2
                                                    x < -4
 
 Now combine the answers with and OR:
