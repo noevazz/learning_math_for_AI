@@ -113,6 +113,16 @@ Why? well sometimes you need need to split the addition you have in the denomina
 4   8      (4*3)     12
 ```
 
+### Notes Regarding Fractions
+
+If a fraction is negative you can rewrite it and place the negative sign in the denominator or the numerator:
+
+```
+-2     2
+ -  =  -
+ 4    -4
+```
+
 ## Classifying Number Sets
 
 ![complex_numbers.jpg](../media/img/complex_numbers.jpg)
