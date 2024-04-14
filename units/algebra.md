@@ -280,7 +280,7 @@ What if the equation has more that one variable:
 
 ```
 
-In this case you need to carefully read what you are asked for: `solve the equation for 'y'`, since the sentence is saying `for 'y'` then you have enough to solve the equation, you just need to isolate y in one side of the equation:
+In this case you need to carefully read what you are asked for: `solve the equation for 'w'`, since the sentence is saying `for 'w'` then you have enough to solve the equation, you just need to isolate y in one side of the equation:
 
 ```
 3(w + 4x) -10 = 6x + 7
@@ -299,7 +299,7 @@ This can be reduced even more using fractions with the same denominator:
            w = -2x + 17/3
 ```
 
-There you go, you have solved the equation for `y`, the result may look a little weird but it is still valid.
+There you go, you have solved the equation for `w`, the result may look a little weird but it is still valid.
 
 ## The Coordinate Plane
 
@@ -352,7 +352,7 @@ Graph:
 
 ![x_plus_y_equals_9.png](../media/img/x_plus_y_equals_9.png)
 
-The spot where the line intersects the x- or -axis is called `intercept`. Using these spots are a practical way to draw the equation, therefore you only need to find (0,y) and (0,y):
+The spot where the line intersects the x- or y-axis is called `intercept`. Using these spots are a practical way to draw the equation, therefore you only need to find (0,y) and (0,y):
 
 ```
 Find y in (0,y):
@@ -724,6 +724,8 @@ Let's see the graph for `2x > 10`:
 
 ![2_x_greater_than_10.png](../media/img/2_x_greater_than_10.png)
 
+> Note there is a vertical dotted line in 5, this means 5 is not included as part of the answer, but if the problem uses `≥` or `≤` the line will be solid because the value will be part of the solution, e.g. `2x ≥ 10`.
+
 > You can use https://www.desmos.com/calculator to generate this graph.
 
 Sometimes a number line is preferred since the y-axis is not needed:
@@ -816,6 +818,8 @@ When the inequality has the symbol `less than` (<), what we are looking for is t
 |x-3| < 10
 ```
 
+In this example we can provide negative numbers tha satisfy the statement, e.g. `-6`, or positive numbers e.g. `10`, but if we provide a large negative number the absolute operation will change it into a large positive number, same if we provide a large positive number, so there's only one range between negative and positive numbers that satisfy the statement, therefore inequalities with `less than` sign needs to find that range.
+
 Solve it for `x`:
 
 ```
@@ -834,7 +838,9 @@ The solution is the resulting compound inequality:
 
 > See graph above at https://quickmath.com/webMathematica3/quickmath/graphs/inequalities/basic.jsp#c=solve&v1=%257Cx-3%257C%253C10
 
-When the inequality has the symbol `greater than` (>), there are typically parts of the number line for x that are discarded, so we use "or" to indicate that the solution can be in one part or another of the number line:
+When the inequality has the symbol `greater than` (>), there are typically parts of the number line for x that are discarded, so we use `or` to indicate that the solution can be in one part or another of the number line:
+
+> The result will be two inequalities joined with an `or`, in other words: a number needs to satisfy inequality 1 `or` inequality 2. This is because there's a section in the negative numbers that satisfy the inequality, there's also a section in the positive numbers tha satisfy the statement, but there's a section between them that does NOT satisfy the statement, so that's why we need two inequalities, one to satisfy the negative section and the other to satisfy the positive section, and the part in the middle that does not satisfy the statement is not added as part of the result.
 
 ```
 |2x + 3| > 5
@@ -860,11 +866,49 @@ Let's see the graph:
 
 You can see by the graph tha using an `or` is required since there's a section in the number line that we want to exclude, this part are numbers that does NOT make the expression greater than the value.
 
+## Inequalities With Two Variables
+
+```
+2x – 3y < 12
+```
+
+Imagine the less than sign is an equal sign and solve it as if it was an equation:
+
+```
+2x – 3y = 12
+2x = +3y +12
+2x -12 = 3y
+(2x -12)/3 = y
+(2/3)x -4 = y    This is the slope-intercept form
+```
+
+Now let's plot this equation:
+
+![](../media/img/2_over_3_x_minus_4_equals_y.png)
+
+You can see the line splits the coordinate plane in two regions, you can select any point from these regions and see which one satisfy the inequality, (0,0) seems to be the easier point for the region on the top:
+
+```
+    2x – 3y < 12
+2(0) – 3(0) < 12
+          0 < 12
+```
+
+There you go, any point in the top region satisfy the statement, you can shade this region to make it more clear:
+
+![2_x_minus_3_y_less_than_12.png](../media/img/2_x_minus_3_y_less_than_12.png)
+
 ## Systems Of Equations
 
-Toretto is chasing an assassin.
+A system of equations is a collection of two or more equations.
 
-- The assassin is going at A `150 km/h`, sor `2.5 km/min`
+### The Substitution Method
+
+There are a few ways to solve systems of equations, the `substitution method` can be used to solve any system, let's see this method with a practical example:
+
+Toretto is chasing an assassin. 🚗💨
+
+- The assassin is going at A `150 km/h`, or `2.5 km/min`
 - Toretto is going at `180 km/h`, or`3 km/h` and started to run `5 min later`.
 
 **How long will it take Toretto to catch up with the assassin?**
@@ -893,13 +937,21 @@ y-0 = 3(x-5)
 y = 3x-15
 ```
 
-Let's see the graph for both equations:
+System of equations are usually written with a left brace:
+
+![systems_of_equations_toretto_left_brace.png](../media/img/systems_of_equations_toretto_left_brace.png)
+
+> Image above was generated using latex at http://www.tlhiv.org/ltxpreview/
+
+Let's see the graph for this system of equations:
 
 ![systems_of_equations_toretto.png](../media/img/systems_of_equations_toretto.png)
 
 > Red line is Toretto and blue line is the assassin.
 
-Now let's put together both equations:
+> TIP: if the equations never cross then there is no solution. Check the slope and also check if they overlap, if both have the same slope and overlap then there are infinite solutions, if the slope is the same but they do not overlap then there is not solution.
+
+The substitution method is about solving one equation and then plug the result into the other equation, let's take `3x-15 = y` and substitute `y` with the other equation `2.5x`:
 
 ```
   3x-15 = 2.5x
@@ -919,35 +971,632 @@ If you want to know the green spot in the chart then:
    3x-15 = y
 3(30)-15 = y
    90-15 = y
-      dd q q75 = y
+      75 = y
 ```
 
-So there you have it: `(30, 75)` is the interception of both equations.
+So there you have it: `(30, 75)` is the solution for the system of equations.
+
+
+Example 2:
+
+```
+  ,- 
+ _|   2x -5y = 20
+  |   x -y = 40
+  `- 
+```
+
+Using the standard form is an easier way to see how we plug one equation into another:
+
+We just need to see which equation is easier to solve for `y`, in this case `x-y = 40` is easier to solve so let's do it:
+
+```
+x -y = 40
+  -y = 40 -x
+   y = -40 +x
+```
+
+Now let's plug the **result** into the other equation:
+
+```
+2x -5y = 20
+2x -5(-40 +x) = 20
+```
+
+And now resolve for `x`:
+
+```
+2x -5(-40 +x) = 20
+  2x +200 -5x = 20
+       2x -5x = 20 -200
+       2x -5x = -180
+          -3x = -180
+       -3x/-3 = -180/-3
+            x = 60
+```
+
+`60` is the value for the x-axis, now let's use any equation to find the value for `y`:
+
+```
+y = -40 +x
+y = -40 +60
+y = 20
+```
+
+SOLUTION for the system: `(60, 20)`
+
+
+### The Elimination Method
+
+The elimination method involves adding or subtracting equations in order to eliminate one of the variables, making it easier to solve for the remaining variables.
+
+Let's solve the same system of the previous section but this time using the elimination method:
+
+```
+  ,- 
+ _|   2x -5y = 20
+  |   x -y = 40
+  `- 
+```
+
+Let's multiply the second equation by 5:
+
+```
+  ,- 
+ _|   2x -5y = 20
+  |   5(x -y) = 5(40)
+  `- 
+```
+
+Reduce:
+
+```
+  ,- 
+ _|   2x -5y = 20
+  |   5x -5y = 200
+  `- 
+```
+
+Now we can subtract:
+
+```
+2x -5y - (5x -5y) = 20 - 200
+2x -5y - 5x +5y = -180
+2x - 5x = -180
+-3x = -180
+-3x/-3 = -180/-3
+x = 60
+```
+
+There you go.
+
+You can take a different approach and `add` instead of subtract:
+
+```
+  ,- 
+ _|   2x -5y = 20
+  |   x -y = 40
+  `- 
+```
+
+Let's multiply the second equation by `-2`:
+
+```
+  ,- 
+ _|   2x -5y = 20
+  |   -2(x -y) = -2(40)
+  `- 
+```
+
+Reduce:
+
+```
+  ,- 
+ _|   2x -5y = 20
+  |  -2x +2y = -80
+  `- 
+```
+
+Now let's sum the equations:
+
+```
+     2x -5y = 20
+ +  -2x +2y = -80
+    --------------
+        -3y = -60
+      =   y =  20
+```
+
+To find `x` just plug the value of `y` in any equation:
+
+```
+x -y = 40
+x -20 = 40
+x = 40 + 20
+x = 60
+```
+
+You can add or subtract equation depending on your approach.
+
+## Systems With No Solutions
+
+Let's say you have to parallel equations without overlapping each other:
+
+```
+  ,- 
+ _|   2x -3y = 20
+  |   6x -9y = 30
+  `- 
+```
+
+You can convert those equations into its slope-intercept form (by isolating `y`) and there you can easily find the slope by seeing the coefficient of `x`, a trick to find the slope is `m=A/B` for `Ax + By = C`.
+
+In this system of equations the slope is `1/2` for both equations, and also the equations do not overlap.
+
+If you try to use the elimination method you will end up with no variables:
+
+```
+  Multiply by 3:
+  ,- 
+ _|   3(2x -3y) = 20
+  |   6x -9y = 30
+  `- 
+  Reduce:
+  ,- 
+ _|   6x -9y = 20
+  |   6x -9y = 30
+  `- 
+```
+
+If you subtract you will delete all variables, this is just another sign that the system of equations does not have a solution.
+
+## Systems Of Inequalities
+
+![systems_of_inequalities.png](../media/img/systems_of_inequalities.png)
+
+Systems of inequalities are threated pretty much the same as in section [Linear Inequalities](#linear-inequalities), you just need to graph both inequalities and the answer will be the overlap between the inequalities.
+
+## Tensors
+
+Tensors are the most common data structure used in Machine Learning.
+
+A popular Python library to work with tensors is called `Tensorflow`. https://www.tensorflow.org
+
+### What Is A Tensor
+
+In simple words, tensors are arrays of numbers.
+
+Tensors are classified depending on the amount of dimensions.
+
+![shape_of_tensor.jpg](../media/img/shape_of_tensor.jpg)
+
+> When we have more than two indices to refer to a specific element in a data structures (or mathematical, structure) we stop treating them with special names like scalars, vectors, matrices etc. Instead we address them with a more generalized language, tensors.
+
+Let's see an example of each one using Python:
+
+```
+scalar = 4
+
+vector = [1, 2, 3]
+
+matrix = [
+  [1, 2, 3]
+  [4, 5, 6],
+  [7, 8, 9]
+]
+
+threeTensor = [
+  [[1, 2], [3, 4]],
+  [[5, 6], [7, 8]]
+]
+```
+
+## Matrix
+
+![the_matrix_has_you.webp](../media/img/the_matrix_has_you.webp)
+
+A matrix is a collection of `elements` arranged in `rows` and `columns`.
+
+The `order` of a matrix describes how many rows and columns a matrix have, e.g. a matrix of order 3x5 (three by five) has 3 rows and 5 columns.
+
+Matrix are typically displayed surrounded by big brackets:
+
+![example_matrix_3_by_5.png](../media/img/example_matrix_3_by_5.png)
+
+> This image was generated at http://www.tlhiv.org/ltxpreview/ with this file [example_matrix_3_by_5.tex](../scripts/latex/example_matrix_3_by_5.tex)
+
+Image above shows:
+
+- The matrix ***A***, you can use any letter to named a matrix.
+- In algebra the letter used to represent a matrix **is typically in bold, uppercase and italic** so it can be distinguished from other types of variables.
+- The position of each element is identified with a subscript where the first number is the row, and the second is the column.
+- Typically, the same letter used to represent the entire matrix is used to represent a specific element but in lowercase.
+- Instead of `x` and `y`, as in the cartesian plane, we use `i` and `j` when talking about matrices.
+
+When talking about a matrix of unkown order this `m by n` is used:
+
+![m_by_n_matrix.png](../media/img/m_by_n_matrix.png)
+
+> This image was generated at http://www.tlhiv.org/ltxpreview/ with this file [m_by_n_matrix.tex](../scripts/latex/m_by_n_matrix.tex)
+
+💡 When a matrix has the same number of rows and column is called `square matrix`.
+
+When you want to refer to a specific element in the matrix you need to use the subscript e.g. `a₂,₁`.
+
+Matrices are typically composed of elements that belong to a common field, such as real numbers, complex numbers, or integers. Mixing different types of numbers within a single matrix isn't inherently invalid, but it may not always make sense depending on the context of the problem you're working on.
+
+Anyways, math teachers like to create this type of scenarios to test your abilities:
+
+![matrix_with_mixed_real_numbers.png](../media/img/matrix_with_mixed_real_numbers.png)
+
+> This image was generated at http://www.tlhiv.org/ltxpreview/ with this file [matrix_with_mixed_real_numbers.tex](../scripts/latex/matrix_with_mixed_real_numbers.tex)
+
+### Matrix Operations
+
+#### Multiplication By A Scalar
+
+`Scalars` are numbers that scale or stretch other mathematical objects without changing their direction. Scalars are NOT elements within a matrix, they are just real numbers.
+
+When you multiply a matrix by a scalar, you simply multiply each element of the matrix by that scalar. If `A` is a matrix and `k` is a scalar, the result of multiplying `A` by `k` is denoted as `kA`.
+
+![matrix_miltiplied_by_scalar.png](../media/img/matrix_multiplied_by_scalar.png)
+
+> This image was generated at http://www.tlhiv.org/ltxpreview/ with this file [matrix_multiplied_by_scalar.tex](../scripts/latex/matrix_multiplied_by_scalar.tex)
+
+#### Adding And Subtracting Matrices
+
+IMPORTANT: **ONLY** if you have two matrices of the same order you can add or subtract them.
+
+
+- Addition:
+
+  ![add_matrices.png](../media/img/add_matrices.png)
+
+  > This image was generated at http://www.tlhiv.org/ltxpreview/ with this file [add_matrices.tex](../scripts/latex/add_matrices.tex)
+
+- Subtraction:
+
+  ![subtract_matrices.png](../media/img/subtract_matrices.png)
+
+  > This image was generated at http://www.tlhiv.org/ltxpreview/ with this file [subtract_matrices.tex](../scripts/latex/subtract_matrices.tex)
+
+#### Matrix Multiplication
+
+**IMPORTANT**: There is a big rule for multiplying matrices and tha is the number of columns in the first matrix should be the same as te number of rows in the second matrix, in other words:
+
+![rule_for_matrix_multiplication.png](../media/img/rule_for_matrix_multiplication.png)
+
+Example:
+
+![matrix_multiplication.gif](../media/img/matrix_multiplication.gif)
+
+![matrix_multiplication.png](../media/img/matrix_multiplication.png)
+
+#### Hadamard Product
+
+In mathematics, the Hadamard product (also known as the element-wise product, entrywise product[1]: ch. 5  or Schur product[2]) is a binary operation that takes in two matrices of the same dimensions and returns a matrix of the multiplied corresponding elements.
+
+This operation can be thought as a "naive matrix multiplication" and is different from the matrix product. 
+
+The Hadamard product A ⊙ B (sometimes A ∘ B)
+
+![hadamard_product.png](../media/img/hadamard_product.png)
+
+### Determinants
+
+A determinant is a real number found in every `squared` matrix.
+
+It is used to solve systems of linear equations.
+
+- Find the determinant of a 2x2 matrix:
+
+  Having this system of linear equations:
+
+  ```
+  2x+3y = 11
+  4x−y = 5
+  ```
+
+  We can represent the system in a matrix:
+
+  ```
+  | 2   3 |
+  | 4  -1 |
+  ```
+
+  > Determinant syntax usually uses a straight line instead of brackets.
+
+  Now let's use this method to find the determinant:
+
+  ![determinants_2x2.jpg](../media/img/determinants_2x2.jpg)
+
+  ```
+      | 2   3 |
+  A = | 4  -1 |
+
+  det(A) = (2*-1) - (3*4) = -2 - 12 = -14
+  ```
+- Find the determinant of a 3x3 matrix:
+
+  ![determinants_3x3.jpg](../media/img/determinants_3x3.jpg)
+
+### Cramer's Rule
+
+The cramer's rule uses determinants to solve systems of linear equations.
+
+![cramersrulenotes.jpg](../media/img/cramersrulenotes.jpg)
+
+- In the image above `a`, `b`, `e`, `c`, `d` and `f` are constants.
+
+- Basically you need to find the determinant in the numerator and divide the result by the determinant in the denominator.
+
+### Vectors
+
+A vector is a mathematical object that represents a quantity with both `magnitude` and `  `.
+
+A vector may look like a 1xN matrix:
+
+![vectors.png](../media/img/vectors.png)
+
+
+> A `unit vector` is a vector with magnitude 1. 
+
+Vector can represent 2 dimensional object:
+
+```
+[x, y]
+```
+
+Three dimensional objects:
+
+```
+[x, y, z]
+```
+
+![xyz_plane.png](../media/img/xyz_plane.png)
+
+
+Or N dimensional objects.
+
+#### Dot Product
+
+The dot product of two vectors is a scalar quantity obtained by multiplying corresponding components of the vectors and then summing up these products.
+
+![dot_product.png](../media/img/dot_product.png)
+
+## Polynomials
+
+Polynomials are mathematical expressions made up of variables and constants by using arithmetic operations like addition, subtraction, and multiplication.
+
+### Characteristics
+
+- In polynomials, the exponents of each of the variables should be non-negative integers.
+  ```
+  2x^-2        This is NOT a polynomial
+  √x = x^(1/2) This is NOT a polynomial
+  ```
+- A polynomial comprises constants and variables, but we cannot perform division operations by a variable in polynomials.
+  ```
+  1/(y+2)   This is NOT a polynomial
+  ```
+
+This is how a polynomial look:
+
+![what-is-a-polynomial.png](../media/img/what-is-a-polynomial.png)
+
+### Classification
+
+- Classification based by number of terms:
+  ![polynomial_classification_based_on_terms.png](../media/img/polynomial_classification_based_on_terms.png)
+- Classification based by degree:
+  ![polynomial_classification_based_on_degree.png](../media/img/polynomial_classification_based_on_degree.png)
+  > Note the terms are ordered from left to right based in the degree.
+
+It is common to use both classifications at the same time (**the degree is always mentioned first**):
+
+```
+2x³ + 5x    cubic monomial
+```
+
+### Operations With Polynomials
+
+- Addition and subtraction: You can add terms of the same variable with the same exponent by adding the coefficient:
+  ```
+  3x² + 7x² = 10x²
+  ```
+  Another example:
+  ```
+  2x³y⁴ - 8x³y⁴ = -6x³y⁴
+  ```
+  The variable and the exponent are not touch.
+
+-  Multiplying Polynomials:
+  ```
+  (3x²)*(5x⁴) = 15x⁶
+  ```
+  > Basically apply the distributive rule and exponential rules saw in the [foundations](foundations.md) unit.
+  
+  Another example:
+  ```
+  (2x² + x)*(3x⁴) = 6x⁶ + 3x⁵
+  ```
+
+  Another example:
+  ```
+  (x+2)*(x+2)
+  = (x+2)²
+  = x² + 2x + 2x + 4
+  = x² + 4x + 4
+  ```
+
+- Division:
+  Similar to multiplication but this time subtract the exponents and also divide the coefficients:
+  ```
+  (10x⁴)/(5x²) = 2x²
+  ```
+  > Note: division between monomials is straight forward, we will dig more on division between polynomials with more than one term later.
+
+- LONG DIVISION
+
+  Polynomial long division is like the long division you do with numbers but with polynomials.
+
+  You start by asking, "How many times does THIS go into THAT"
+
+  Example 1:
+  ![LongDivisionofPolynomials_example_1.png](../media/img/LongDivisionofPolynomials_example_1.png)
+
+  Example 2:
+  ![LongDivisionofPolynomials_example_2.png](../media/img/LongDivisionofPolynomials_example_2.png)
+
+  Since there was a reminder then we can add that as a part of the result at the end `reminder/divisor`
+
+- Synthetic Division
+
+Synthetic division is a method that facilitates the operations of polynomials over `linear binomials` e.g. `x-c` where `c` is a constant.
+
+This method uses the coefficients in the polynomial, example:
+
+![synthetic-division-cheat-sheet.jpg](../media/img/synthetic-division-cheat-sheet.jpg)
+
+Important:
+
+- Note the constant written in the "house" is the opposite value, in other words, the divisor is `x-5` so the value for the house needs to be `+5`
+- The `known zero` refers to a value of `x` that makes the polynomial equation equal to zero, in this example `x-5` the value that makes the equation equal to zero is `+5`: `(+5)-5`.
+
+## Factoring Polynomials
+
+Just to remember: A factor is a number that divides evenly into a number and leaves behind no reminder, e.g. the factors of 10 are 10, 5, 2, and 1.
+
+Factoring a polynomial means finding the smaller expressions that, when multiplied together, give you the original polynomial. 
+
+Example:
+
+Factor the polynomial of `6x²y³ - 12xy²`
+
+1. Find the GCF of the coefficients, in this case the GCF of `6` and `12` is `6`.
+2. Identify common variable powers. In this example both terms contains at least `one x` and at least `two y`.
+3. Combine the results of #1 and #2:
+  ```
+  6x¹y²
+  ```
+  > This is the GCF for both terms. The `Greatest Common Factor (GCF) of a polynomial` is the largest monomial that divides evenly into each term.
+4. Now take the original polynomial and divide EACH term **separately**  by #4:
+  ```
+  First term:
+  (6x²y³) / 6x¹y²
+  reduce:
+  (6x²y³) / 6x¹y² = xy
+
+  Second term:
+  (-12xy²) / 6x¹y²
+  reduce:
+  (-12xy²) / 6x¹y²= -2x⁰y⁰
+  = -2(1)(1)
+  = -2
+  ```
+5. The factored result is equal to the GCF found in #3 multiplying #4:
+  ```
+  (6x¹y²)*(xy-2)
+
+  or just: 6xy²*(xy-2)
+  ```
+
+## Factoring By Grouping
+
+This technique is used when just SOME terms in a polynomial have a GCF.
+
+Basically you will group the terms that have a GCF, then factor those groups individually.
+
+Example:
+
+Factor `2x³ -4x² -3x¹ +6`.
+
+- You can see none of the coefficients have a UNIQUE common factor but we can group the terms that have a common factor:
+
+  ```
+  (2x³ -4x²) + (-3x¹ +6)
+  ```
+
+- Now find the GCF:
+  - GCF for `(2x³ -4x²)` is `2x²`
+
+- Then divide the term by that GCF:
+  ```
+  (2x³ -4x²) / 2x²  =  x - 2
+
+  ∴ (2x³ -4x²) =  (2x²) * (x - 2)
+  ```
+- Now rewrite the polynomial:
+  ```
+  2x³ -4x² -3x¹ +6   =   (2x²) * (x - 2) + (-3x +6)
+  You can factor the second term:
+  2x³ -4x² -3x¹ +6   =   (2x²) * (x - 2) -3(x -2)
+  ```
+- Now `(x-2)` can be factorized:
+  ```
+  (2x²) * (x - 2)  -3(x -2)
+
+
+  Divide by (x-2):
+
+  (2x²) * (x - 2)  -3(x -2)
+  ---------------  --------
+      (x -2)        (x -2)
+
+  =  (2x²) -3
+
+  Multiply result by the GCF:
+
+  (x - 2) * (2x²-3)     This is equal to the original polynomial
+  ```
+
+
+## Time-Saving Patterns
+
+These are some patterns that help you factorize faster:
+
+- `Perfect square`: it is the result of multiplying something by itself, example
+  ```
+  (2x)*(2x) = 4x²
+  ```
+  > In the example above the perfect square is `4x²`.
+
+- `Perfect cube`:
+  ```
+  (3x)*(3x)*(3x) = 27x³
+  ```
+
+- `Perfect binomial square`: A perfect square binomial is a trinomial that when factored gives you the square of a binomial, example:
+  ```
+  4x² +8x +4 = (2x+2)²
+  ```
+  Test the result:
+  ```
+  (2x+2)*(2x+2) = 4x² +4x +4x +4
+  ```
+  The result of (Ax + C)² is always:
+  1. 2 times the first term
+  2. 2 times the product of both terms
+  3. 2 times the second term
+
+- `Difference of perfect square`: here is a rule for this case:
+  ```
+  (a²-b²) = (a+b)(a-b)
+  ```
+  Example:
+  ```
+  x²-4 = (x+2)(x-2)
+  ```
+  > Note: in `x²-4` the second term `4` is the same as `2²`
+
+  This time we have two different binomials, the reason is that we need to cancel the terms in the second rule of the perfect binomial square (2 times the product of both terms):
+  ```
+  (x+2)(x-2) = x²  -2x  +2x  -4
+                    ☝️  ☝️
+                    ⛔  ⛔
+  ```
 
 
 
-
-
-
-
-
-
-Systems of Linear Equations and Matrices
-    Quadratic Equations and Functions
-    Polynomials and Polynomial Functions
-    Rational Expressions and Equations
-    Exponential and Logarithmic Functions
-    Radical Equations and Functions
-    Conic Sections
-    Sequences and Series
-    Complex Numbers
-    Matrices and Determinants
-    Vectors
-    Vector Spaces
-    Linear Transformations
-    Eigenvalues and Eigenvectors
-    Polynomial Interpolation
-    Factorization Techniques
-    Group Theory
-    Ring Theory
-    Field Theory
+superscript: ⁰¹²³⁴⁵⁶⁷⁸⁹
+subscript: ₀₁₂₃₄₅₆₇₈₉

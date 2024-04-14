@@ -11,3 +11,5 @@
 - Numerical analysis
 
 
+Principal Component Analysis (PCS)
+Singular Value Decomposition (SVD)
