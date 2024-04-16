@@ -1462,6 +1462,7 @@ Important:
 
 - Note the constant written in the "house" is the opposite value, in other words, the divisor is `x-5` so the value for the house needs to be `+5`
 - The `known zero` refers to a value of `x` that makes the polynomial equation equal to zero, in this example `x-5` the value that makes the equation equal to zero is `+5`: `(+5)-5`.
+- If the polynomial is missing a power you can add it: `0x^power`
 
 ## Factoring Polynomials
 
@@ -1575,28 +1576,86 @@ These are some patterns that help you factorize faster:
   (2x+2)*(2x+2) = 4x² +4x +4x +4
   ```
   The result of (Ax + C)² is always:
-  1. 2 times the first term
+  1. first term to the power of 2
   2. 2 times the product of both terms
-  3. 2 times the second term
+  3. second term to the power of 2
 
 - `Difference of perfect square`: here is a rule for this case:
   ```
   (a²-b²) = (a+b)(a-b)
   ```
+  > IMPORTANT: this rule does **NOT** apply to `(a²+b²)`, the sum of perfect squares cannot be factor as easy as the difference.
+  
   Example:
   ```
   x²-4 = (x+2)(x-2)
   ```
   > Note: in `x²-4` the second term `4` is the same as `2²`
 
-  This time we have two different binomials, the reason is that we need to cancel the terms in the second rule of the perfect binomial square (2 times the product of both terms):
   ```
   (x+2)(x-2) = x²  -2x  +2x  -4
                     ☝️  ☝️
                     ⛔  ⛔
   ```
+  Another example: `5x² -125`
 
+  We need to rewrite this binomial because `5` does NOT have a square root:
 
+  ```
+  5x² -125 = 5(x² -25)
+  ```
+  Now we can apply the rule:
+  ```
+  a² = x²
+  a  = x
+
+  b² = -25
+  b  = -5
+
+  5(x² -25) = 5[(x-5)(x+5)]
+  ```
+- `Difference of perfect cubes`:
+  ```
+  (a³ -b³) = (a-b)(a² +ab + b²)
+  ```
+  Example: `(8x³ -27)`\
+  First find `a` and `b`:
+  ```
+  a = (8x³)^(1/3)
+    = 2x
+  
+  b = (27)^(1/3)
+    = 3
+  ```
+  Now rewrite it:
+  ```
+  (2x-3) [(2x)² + (3)2x + 3²]
+  reduce:
+  (2x-3) (4x² + 6x + 9)
+  ```
+- `Sum of perfect cubes`:
+  ```
+  (a³ + b³) = (a+b)(a² -ab + b²)
+  ```
+  Example: `16x³ -2y³`
+
+  This example is a little bit tricky, because there's no cube root of 16:
+  ```python
+  # python
+  >>> 16**(1/3)
+  2.5198420997897464
+  ```
+  So let's start by factoring the greatest common factor:
+  ```
+  16x³ -2y³ = 2(8x³ -y³)
+  ```
+  Guess what, `8` has a cube root: `8^(1/3) = 2`
+  ```
+  2(8x³ -y³) = 2(apply the rule here)
+  2(8x³ -y³) = 2[(2x + y)((2x)² - 2xy + y²)]
+  Reduce:
+  2(8x³ -y³) = 2[(2x + y)(4x² - 2xy + y²)]
+  ```
 
 superscript: ⁰¹²³⁴⁵⁶⁷⁸⁹
 subscript: ₀₁₂₃₄₅₆₇₈₉
