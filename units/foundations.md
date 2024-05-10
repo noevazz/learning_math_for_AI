@@ -127,6 +127,8 @@ If a fraction is negative you can rewrite it and place the negative sign in the 
 
 ![complex_numbers.jpg](../media/img/complex_numbers.jpg)
 
+> Imaginary numbers are numbers that represents quantities that can NOT be expressed with Real numbers, imaginary numbers use the letter `i` which represent the square root of -1.
+
 Other classifications:
 
 - Even numbers: numbers that are evenly divisible by 2, e.g. 4, 8, 10.
@@ -163,6 +165,8 @@ The absolute value function can also be defined formally as follows:
 |a| = a, if a ≥ 0
 |a| = -a, if a < 0
 
+> The opposite of a number is not the same as the absolute value: `|5|` is not the same as the opposite of `5`.
+
 ## Grouping Symbols
 
 parentheses ( ), brackets [ ], braces {}, pipes ||, etc. are symbols that surround all or portions of a math problem.
@@ -196,6 +200,8 @@ If you have nested groups you can use different grouping symbols instead of just
 Algebra properties (aka axioms) are **obvious** mathematical facts that are accepted without proof.
 
 ### Associative Property
+
+> In mathematics, an `expression` is a combination of symbols and numbers that represents a quantity or an operation, such as `3x +5` in algebra, where `x` is an unknown value.
 
 Associative property means that a value of an expression is the same regardless of how numbers associate with each other within grouping symbols. This is true for addition and multiplication:
 
@@ -281,7 +287,7 @@ Identity elements are used in the inverse properties.
 
 ### Inverse Property
 
-Inverse elements are used to cancel out a number:
+Inverse elements are used to `cancel` out a number:
 
 - **Additive Inverse Property**, this property cancel out a number when you add its opposite.
 
@@ -315,7 +321,7 @@ Variables are useful when we want to focus in the operations we need to carry ou
 
 Variables also represent unknown values, maybe we know the operations but we do not know the values.
 
-Mathematicians uses **expressions** to translate phrases into math language, example "3 times a number divided by 2" can be represented as the expression `(3x)/2`.
+Mathematicians uses **expressions** to translate phrases into math language, example "3 times a number divided by 2" can be represented as the expression `(3x)/2`. **In sum, expressions are combinations of numbers and symbols that represents quantities or operations.**
 
 ### Distributive Property
 
@@ -367,6 +373,18 @@ The caret `^` is used to represent exponentiation.
 
 
 ### Exponential Rules
+
+![laws_of_exponets.jpg](../media/img/laws_of_exponets.jpg)
+
+- X to the power of 1:
+    ```
+    x¹ = x
+    ```
+
+- X to the power of 0:
+    ```
+    x⁰ = 1
+    ```
 
 - Multiply exponential expressions with the same base:
 

@@ -1,1235 +1,155 @@
-# Algebra
 
-## Recommended Books
 
-- [The complete idiots guide to algebra](../books/the-complete-idiots-guide-to-algebra.pdf) By W. Michael Kelley https://igcsestudybank.weebly.com/uploads/5/2/0/3/52038731/the-complete-idiots-guide-to-algebra.pdf
+### Select Rows, Columns, And Elements In Numpy
 
-Tip: if you use firefox to open PDFs you can add this CSS style to invert the colors of the pdf:
-```
-.pdfViewer {
-  filter: invert(1);
-}
-```
 
-## What Is Algebra
-
-Algebra is a branch of mathematics where letters and symbols represent numbers and quantities in equations and expressions
-
-![algebra.jpg](../media/img/algebra.jpg)
-
-## Equations and Inequalities
-
-An **equation** in algebra is a mathematical statement that shows that two expressions are equal.
-
-Example:
-
-```
-2w+5=11,
-```
-
-In this example `w` represents an unknown value.
-
-Solving the equation implies finding the value of `w` so the equation remains true. For the example above the answer is `w=3`. You can confirm this result by substituting the result in the equation and check if the equality remains true:
-
-```
-2(3)+5=11
-   6+5=11
-    11=11
-```
-
-We have confirmed `3` is the right number that keeps the balance (equality).
-
-Now, how do you find the value of `w`?, that's what we are going to study in this section.
-
-### Solving An Equation
-
-In orders to solve an equation you have to isolate the variable on one side of the equal sign so you can have the actual value on the other side.
-
-You can play with the equation and add, subtract, divide, multiply, etc. values to the equation to isolate the variable, but you need to keep the balance at any point, that means if you want to subtract `-5` of one side, then you MUST do it in both side to keep the balance (equality):
-
-```
-2w+5 = 11
-
-Let's subtract -5:
-2w+5-5 = 11-5
-
-Simplify:
-2w = 6
-
-Now let's remove that 2 by dividing by 2:
-2w/2 = 6/2
-
-Simplify:
-w = 3
-
-THE ANSWER IS 3 OH YEAH!!!
-```
-
-You can replace `3` in the original equation `2w+5 = 11` and see if the result is `11`, if true then `3` is in fact the right answer.
-
-Sometimes adding an operation in both sides can be pretty obvious, some people like to save some lines by just writing the next expression that keeps the equation in balance:
-
-```
-2w+5 = 11
-
-Let's subtract -5:
-2w = 11-5      You can see I directly removed +5
-Some people go further and directly reduce 11-5:
-
-2w = 6
-
-Finally divide by 2:
-w = 3           This time I simplified 6/2 directly
-```
-
-You can do this as long as you keep your process readable, sometimes making things clears is better than writing less.
-
-> To remember: that `2` attached to `2w` is called **coefficient** and it represents a multiplication, this time `2 times w`.
-
-Another example:
-
-In this exaple the variable is `k`:
-
-```
-                -k/6+4 = 28
-
-Start by the easy tasks:
-remove that +4:   -k/6 = 24   I subtracted -4
-remove that 1/6:    -k = 144  I multiplied by 6 in both sides
-
-Now finally multiply by -1 so k will be positive:
-                     k = -144
-```
-
-> Note: in this example the coefficient attached to `k` was a fractional coefficient, `1/6` to be precised. `(1/6)*k` is the same as `k/6`.
-
-Let's check if our result is right:
-
-```
-                -k/6+4 = 28
-           -(-144)/6+4 = 28
-               144/6+4 = 28
-                  24+4 = 28
-                    28 = 28
-
-                  OH YEAH!!!!
-```
-
-Another example:
-
-```
-                x + 3 = 5 + 3
-        In this case we can directly cancel +3:
-                    x = 5
-        Why? because it is the same as:
-                x+3-3 = 5+3-3
-````
-
-So if you find the same `terms` in both sides then you can directly cancel them.
-
-Another example:
-
-```
-–3x – 21 = –2x + 7
-     -3x = -2x + 7 + 21
-     -3x = -2x + 28
--3x + 2x = 28
-      -x = 28
-      x = -28
-```
-
-Test the result:
-
-```
-    –3x – 21 = –2x + 7
--3(-28) - 21 = -2(-28) + 7
-     84 - 21 = 56 + 7
-          63 = 63
-
-         OH YEAH!!
-```
-
-### SymPy
-
-SymPy is a Python library for symbolic math. 
-
-Learn more at: https://www.sympy.org/en/index.html
-
-In symbolic math, symbols are used to represent mathematical expressions.
-
-You can find practical examples at: https://problemsolvingwithpython.com/10-Symbolic-Math/10.00-Introduction/
-
-- Install sympy: `pip install sympy`
-
-Let's solve the same equation we solve in the previous section:
-
-```
-    –3x – 21 = –2x + 7
-```
-
-Python code:
+Matrix for the examples:
 
 ```python
-from sympy import symbols, Eq, solve
-
-# Define the variable
-x = symbols('x')
-
-# Define la equation
-equation = Eq(-3*x - 21, -2*x + 7)
-
-# Solve the equation
-solution = solve(equation, x)
-
-print(f"The solution for {equation} is {solution}")
+>>> import numpy as np
+>>> A = np.array([[6,4,24],[1,-9,8]])
+>>> A
+array([[ 6,  4, 24],
+       [ 1, -9,  8]])
 ```
 
-> This code is also available at [solving_equations.py](../scripts/solving_equations.py).
+- Select a row:
 
+  ```python
+  >>> A[0]
+  array([ 6,  4, 24])
+  >>>
+  ```
 
-Execution:
+  > In contrast to math theory, in most programming languages the index start at 0
 
-```
-$ python3 solving_equations.py
-The solution for Eq(-3*x - 21, 7 - 2*x) is [-28]
-```
+- Select multiple rows:
 
-Just a note, in an IPython console session, or a regular Python session, it will use the Unicode pretty printer if the terminal supports Unicode:
+  Syntax:
 
-```
-$ python3
-Python 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0] on linux
-Type "help", "copyright", "credits" or "license" for more information.
->>> from sympy import *
->>> x,y,z = symbols('x y z')
->>> init_printing()
->>> Integral(sqrt(1/x), x)
- ⌠
-⎮     ___
-⎮    ╱ 1
-⎮   ╱  ─  dx
-⎮ ╲╱   x
-⌡
->>>
-```
+  ```
+  nameOfTheMatrix[start:end]
+  ```
 
-Learn more at https://docs.sympy.org/latest/tutorials/intro-tutorial/printing.html
+  Select rows starting from `start` index up to (**but not including**) the `end` index.
 
+  Example
 
-### Absolute Value Equations
+  ```python
+  >>> A[0:2]
+  array([[ 6,  4, 24],
+        [ 1, -9,  8]])
+  >>>
+  ```
 
-Steps:
+  > Since the matrix only have two rows (index 0, and index 1) I write `[0:2]` because the `end` (2) is not included.
 
-1. Isolate the absolute expression.
-2. Create two equations, both equations will look like the isolated version but without the bars, the second equation will change the value on the left for its opposite value.
-3. Solve the equation, both equations are the answer for the original absolute equation.
+- Select a single column:
 
-Example:
+  ```
+  >>> A[:,1]
+  array([ 4, -9])
+  >>>
+  ```
 
-```
-20|3x-3| = 20
+- Select multiple colums:
 
-Dived by 20:
-  |3x-3| = 1
+  Syntax:
 
-Now create two equations:
-3x-3 = 1    and   3x-3 = -1
+  ```
+  nameOfTheMatrix[:, start:end]: 
+  ```
 
-Solve both equations:
-3x-3 = 1    and   3x-3 = -1
-  3x = 1+3          3x = -1+3
-  3x = 4            3x = 2
-   x = 4/3           x = 2/3
-```
+  This selects columns starting from `start` index up to (**but not including**) the `end` index.
 
-Solution using python here [absolute_equations.py](../scripts/absolute_equations.py).
+  Example:
 
-Let's verify the answers:
+  ```python
+  >>> A[:,1:3]
+  array([[ 4, 24],
+        [-9,  8]])
+  >>>
+  ```
 
-```
-For x = 4/3
-            20|3x-3| = 20
-        20|3(4/3)-3| = 20
-        20|(12/3)-3| = 20
-             20|4-3| = 20
-               20|1| = 20
-                  20 = 20
+- Select specific element:
 
-For x = 2/3
-            20|3x-3| = 20
-        20|3(2/3)-3| = 20
-         20|(6/3)-3| = 20
-             20|2-3| = 20
-              20|-1| = 20
-                  20 = 20
-```
+  ```python
+  >>> # First select the desired row or column:
+  >>> A[:,1]
+  array([ 4, -9])
+  >>> # Add brackets and select the element:
+  >>> A[:,1][1]
+  -9
+  >>> 
 
-## Equations with Multiple Variables
+### Symmetric Matrix
 
-```
-5x-4 = 0
-```
+It is an special square matrix where elements are symmetric respect to the main diagonal.
 
-If I tell you `solve the equation above for x` then you already know you need to isolate x to find its value.
-This is pretty obvious because `x` is the only variable in the equation.
-
-What if the equation has more that one variable:
-
-```
-3(w + 4x) -10 = 6x + 7
-
-```
-
-In this case you need to carefully read what you are asked for: `solve the equation for 'w'`, since the sentence is saying `for 'w'` then you have enough to solve the equation, you just need to isolate y in one side of the equation:
-
-```
-3(w + 4x) -10 = 6x + 7
-
-first simplify:
-3w + 12x -10 = 6x + 7
-
-Now move things to the right:
-    3w + 12x = 6x + 7 + 10
-    3w + 12x = 6x + 17
-          3w = 6x - 12x + 17
-          3w = -6x + 17
-           w = (-6x + 17)3
-This can be reduced even more using fractions with the same denominator:
-           w = (-6x)/3 + 17/3
-           w = -2x + 17/3
-```
-
-There you go, you have solved the equation for `w`, the result may look a little weird but it is still valid.
-
-## The Coordinate Plane
-
-The coordinate plane, also known as the `Cartesian plane`, is a two-dimensional plane formed by two perpendicular number lines called the `x-axis` (the horizontal line) and the `y-axis` (the vertical line). These axes intersect at a point called the `origin`, usually denoted as `(0, 0)`.
-
-Coordinates on the plane are written in the form `(x, y)`, where 'x' represents the horizontal position (along the x-axis) and 'y' represents the vertical position (along the y-axis). The x-coordinate tells you how far to move horizontally from the origin, while the y-coordinate tells you how far to move vertically from the origin.
-
-`(x,y)`: These numbers are known as the `abscissa` (for x) and the `ordinate` (for y). So, what do they represent?
-
-![cartesian-plane-3-robot_ver_1.jpg](../media/img/cartesian-plane-3-robot_ver_1.jpg)
-
-The intersection of the two axes at the origin creates a cross shape, with four spaces of equal size around the axes. These spaces are called quadrants.
-
-Learn more at: https://www.twinkl.com.mx/teaching-wiki/cartesian-plane
-
-Could you tell me the coordinates (the values for x and y) to find the start?:
-
-![Cartesian_Plane_star.PNG](../media/img/Cartesian_Plane_star.PNG)
-
-Answer: the coordinates are `(2,4)`, this means 2 positive units in the x-axis and 4 positive units in the y-axis.
-
-### Sketching Equations
-
-Let's say we have this equation:
-
-```
-x+y = 9
-```
-
-If tell you to solve it for `x` then the answers is `x = 9-y` and if I tell you solve it for `y` then the answer is `y = 9-x`, but what if I told you I need both the values for `x` and `y` that makes the equation true (9), then we have infinite answers:
-
-```
-1+8 = 9
-2+7 = 9
-0+9 = 9
-3.5+5.5 = 9
-etc...
-```
-
-What if you put those values in the cartesian plane:
-
-```
-point 1: (1, 8)
-point 2: (2, 7)
-point 3: (9,0)
-point 4: (3.5, 5.5)
-```
-
-Graph:
-
-![x_plus_y_equals_9.png](../media/img/x_plus_y_equals_9.png)
-
-The spot where the line intersects the x- or y-axis is called `intercept`. Using these spots are a practical way to draw the equation, therefore you only need to find (0,y) and (0,y):
-
-```
-Find y in (0,y):
-  0=9-y ∴ y=9
-Finally: (0,9) intersects in y
-
-Find x in (x,0):
-  x=9-0 ∴ x=9
-Finally: (9,0) intersects in x
-```
-
-> `∴` means therefore in math.
-
-You can see all dots make a perfect `straight line`, this line represent the infinite number of solutions for `x+y=9`, every single point on that line is a solution for the `linear equation`, it is called linear because it makes a straight line.
-
-> Sketching an equations is useful to visualize the all the ordered pairs (x,y) that conforms the equation.
-
-## Linear Equations
-
-The standard form of a linear equation is:
-
-```
-Ax + By = C
-```
-
-> Sometimes the equation is written different but it keeps the same characteristics.
-
-Where:
-
-- `A` and `B` represent coefficients.
-- `C` is a constant.
-
-Characteristics of linear equations:
-
-- Variables are raised to a power no higher than one.
-- They make a straight line graph.
-
-An example worth to review:
-
-- `x = 5.5`, yes, it is a linear equation, it may help to see it in another form just to understand why: `1x + 0y = 5.5`, reduce the equation and you will find why it is still a linear equation, this is the graph:
-
-  ![x_equals_5dot5.png](../media/img/x_equals_5dot5.png)
-  
-  Why the line is vertical this time?, answer: because all possible value for `y` are converted to 0 since the equation has `0y`, so in `(x,y)` the variable responsible to make the equation `5.5` will be `x` and `y` can have any value, in other words: `(5.5,y)` where `x` is fixed and `y` have infinite values therefore making a vertical line.
-
-You can find online graphing calculators so you can visualize your equations, example: https://www.desmos.com/calculator
-
-Another example:
-
-```
--3x+y = 8
-```
-
-First let's solve the equation for `y`:
-
-```
-y = 3x +8
-```
-
-> When `y` is isolated is called the `slope-intercept` form.
-
-Now it is easier to find some (x,y) pairs:
-
-> You can take as many values for `x` as you want, at least two value are needed since you need to make a line.
-
-|x-axis|y-axis|
-|---|---|
-|1|y=3(1)+8=11|
-|2|y=3(2)+8=14|
-|3|y=3(3)+8=17|
-|4|y=3(4)+8=20|
-|5|y=3(5)+8=23|
-
-Now let't plot this points:
-
-![minus_3_plus_y_equals_8.png](../media/img/minus_3_plus_y_equals_8.png)
-
-> Image above was generated using https://www.desmos.com/calculator
-
-Using this chart you can find other valid values like (-2,2)
-.
-
-## How To Find The Slope
-
-The slope describes how slanty a line is.
-
-![slope-equation.png](../media/img/slope-equation.png)
-
-This is the slope formula, which states `Slope = Rise/Run`. When plotting a line on a graph, the `Rise` refers to the change in `y` that corresponds to a specific change in `x`. This change in `x` is called the `Run`.
-
-In the image above the first spot is found at `(3,2)` where `3 is x₁` and `2 is y₁` and the second one is at `(7,5)` where `7 is x₂` and `5 is y₂`, let's find the slope of this line:
-
-```
-        5-2   3
-slope = --- = -
-        7-3   4
-```
-
-### What The Slope Tells You
-
-- What does `3/4` means?: it means you can go up 3 units and right 4 units and you will be still in the line
-
-- Positive slopes means the line rises up (negative slopes means the line fall)
-
-- An slope equals to 0 means the line is horizontal.
-
-- Undefined slopes (where x₂ and x₁ are the same therefore making a division by 0 in the equation) means the line is vertical.
-
-- Slopes close to 0 mean that the line rise/falls slowly
-
-- Slopes far from 0 mean that the line rise/falls quickly.
-
-![types_of_slopes.png](../media/img/types_of_slopes.png)
-
-## Absolute Value Graphs
-
-Consider the following equation:
-
-```
-|x|-y = -9
-```
-
-Let's solve for `y`:
-
-```
-|x|+9 = y
-```
-
-Let's create a table for some spots:
-
-|x-axis|y-axis|y-axis(simplified)|
-|---|---|---|
-|-3| &#124;-3&#124;+9 = y | 12|
-|-2| &#124;-2&#124;+9 = y | 11|
-|-1| &#124;-1&#124;+9 = y | 10|
-|0| &#124;0&#124;+9 = y | 9|
-|1| &#124;1&#124;+9 = y | 10|
-|2| &#124;1&#124;+9 = y | 11|
-|3| &#124;1&#124;+9 = y | 12|
-
-You can see we can take all [Real](foundations.md#classifying-number-sets) numbers (all negatives and all positives), but the result for `y` is always a positive number.
-
-Let's plot this spots:
-
-![abs_x_abs_plus_9_equals_y.png](../media/img/abs_x_abs_plus_9_equals_y.png)
-
-As you can see by the chart, equations with absolute expressions generate a V-shape chart.
-
->💡 The sharp point is called `vertex`
-
-**Is the absolute value function a linear function?**, have fun and try to find the answer: https://math.stackexchange.com/questions/88669/is-the-absolute-value-function-a-linear-function
-
-It does not have a constant slope. Therefore, it is not a linear function, but you can have some fun discussing with others about this.
-
-### More About Absolute Value Graphs
-
-In the image below you can see how operations affect an absolute value graph:
-
-![More_About_Absolute_Value_Graphs.png](../media/img/More_About_Absolute_Value_Graphs.png)
-
-- Red line `|x| = y` shows a basic graph, calculate the slope taking two spots: `(5/2)/(5-2) = 1`, which means (and also is visible) the slope is at 45 degrees.
-
-- Blue line `-|x|-2 = y` shows and inverted graph in the x-axis because the abs term is being multiplied by `-1` and it is move `2` units down in the y-axis because `-2` is being subtracted.
-
-- Green line `3|x|+1 = y` shows a thin graph because is being multiplied by `3`, which means the line will rise quickly, and finally is moved `1` unit up in the y-axis because `+1` is being added.
-
-- Purple line `|(1/4)|x|-5 = y` shows a thick graph because the absolute term is being divided by `4` and it is moved `5` units down in the y-axis because `-5` is being subtracted.
-
-## Point-Slope Form
-
-So far we have seen the `standard form` of a linear equation:
-
-```
-Ax + By = C
-```
-
-Where:
-
-- `A`, `B` and `C` are constants (numbers).
-- `x` is the value for the x-axis
-- `y` the value for the y-axis.
-
-> Other author use different letters but it is the same.
-
-> TIP: if you have an equation that uses the standard form you can find the slope using this formula: `Ax + By = C  ∴  m=A/B`, this is because you have to send `Ax` to the right side and the dived by `B` to isolate `y`.
-
-And we have seen the `slope-intercept` form:
-
-```
-y = mx +b
-
-Example:
--3x+y = 8  👈 standard equation
-y = 3x +8  👈 slope-intercept equation
-```
-
-Where:
-- `m` is the slope
-- `b` is the intercept in the y-axis
-
-
-But now we are going to see another way to represent linear equations, the `point-slope` form:
-
-```
-y-y₁ = m(x-x₁)
-```
-
-Where:
-
-- `m` is the slope
-- `y` is the y coordinate of any point
-- `y₁` is the y coordinate of an known point.
-- `x` is the x coordinate of any point
-- `x₁` is the x coordinate of an known point.
-
-Let's see a practical example:
-
-Having the equation `x=y` transform the equation into its point-slope form:
-
-![x_equals_y.png](../media/img/x_equals_y.png)
-
-- Find the slope: `m=(y₂-y₁)/(x₂-x₁)`, from the image I will pick these spots `(5,5)` and `(1.5, 1.5)`, then the slope is `m=(5-1.5)/(5-1.5) =1`, so the slope is `m=1`.
-- Now let's add that slope to the formula: `y-y₁ = 1(x-x₁)`, and there you go, now you have created the point-slope form of the equation `|x|=y`..
-
-What if I want to have a point-slop formula of a linear equation that rise twice as fast than `|x|=y`?, then you only need to modify the slope: `y-y₁ = 2(x-x₁)`, let's use this last form and see the graph:
-
-![x_equals_y__and__2_times_abs_x_equals_y.png](../media/img/x_equals_y__and__2_times_x_equals_y.png)
-
-You can see the the line rises 2 times faster, e.g. for 5 in x we have 10 in y.
-
-Now, let's go further, I will give you one spot and the corresponding slope of the line, then I want you to give me the point-slope form and finally the general equation:
-
-Spot: (5,10)\
-Slope: 2
-
-```
-  y-y₁ = m(x-x₁)
-  
-  y-10 = 2(x-5)   👈 Point-slope form
-  
-  y-10 = 2x-10
-  y = 2x          👈 standard equation
-```
-
-Guess what, you have found the same exercise we saw earlier (the green line):
-
-![x_equals_y__and__2_times_x_equals_y.png](../media/img/x_equals_y__and__2_times_x_equals_y.png)
-
-💡 So you can find the standard equation if you have the slope and any point of the line using the point-slope formula.
-
-## From Point A To Point B
-
-Using the slope formula, find the linear equation giving two points:
-
-```
-Point A: (3,2)
-
-Point B: (6, 4)
-```
-
-Procedure:
-
-```
-    y₂-y₁
-m = -----
-    x₂-x₁
-
-    4-2     2
-m = ---  =  -
-    6-3     3
-```
-
-since we have two points and the slope, we can use the `point-slope` formula:
-
-
-```
-y-y₁ = m(x-x₁)
-
-I will use this point: (3,2), now let's replace the slope and the point:
-y-2 = (2/3)(x-3)
-```
-
-Now we can reduce and move things around to get the `slope-intercept` form:
-
-```
-y-2 = (2/3)(x-3)
-
-Reduced:
-
-y-2 = (2/3)(x-3)
-y-2 = (2/3)x - (2/3)3
-y-2 = (2/3)x - (6/3)
-y-2 = (2/3)x - 2
-  y = (2/3)x - 2 + 2
-  y = (2/3)x +0     👈 intercept in y-axis is in 0
-```
-
-Let's use a graphical calculator:
-
-![2_over_3_equals_x.png](../media/img/2_over_3_equals_x.png)
-
-There you go.
-
-## Parallel And Perpendicular Lines
-
-![Parallel-and-Perpendicular-Lines.png](../media/img/Parallel-and-Perpendicular-Lines.png)
-
-Examples:
-
-![parallel-perpendicular-examples.png](../media/img/parallel-perpendicular-examples.png)
-
-
-> For perpendicular lines: `m₁*m₂ = -1`, in other words: the result of the product of both slope is `-1`.
-
-## Linear Inequalities
-
-An inequality is a statement that shows the relationship between two quantities.
-
-Expressing that one quantity is `greater than`, `less than`, or not equal to the other.
-
-![inequality_symbols.jpeg](../media/img/inequality_symbols.jpeg)
-
-> Note: the symbol `≠` (not equal to) is not really helpful to describe why something is not equal, instead `>, <, ≥, ≤` are preferred because they explay why the quantities are unequal.
-
-For example
-
-- `x > 5` means that the value of `x` is greater than `5`
-- `y ≤ 10` means that the value of `y` is less than or equal to `10`.
-- `10 ≥ 6` means `10` is either greater or equal to `6` which is true.
-- `10 ≥ 10` means `10` is either greater or equal to `10` which is true (kinda obvious).
-
-You may be tested to say if an statement is `true` or `false`:
-
-- `10 ≥ 5000`, this is `false`, `10` is not greater or equal than `5000`
-
-**IMPORTANT**: an equation has one unique solution but inequalities have a `range` of solutions, e.g. `x > 5` here there are a lot of numbers for `x` that satisfy this statement.
-
-### Negative Number
-
-Large negative numbers are considered the smallest quantities, for example, all these statements are true:
-
-- `-6000 < 50`
-- `-6000 < 1`
-- `-6000 < 0`
-- `-6000 < -3`
-- `-6000 < -5999`
-
-### Solving Inequalities
-
-Solving inequalities involves finding all the values that makes the statement true.
-
-Example:
-
-`2x > 10`, answer: all values greater than 5 make the statement true.
-
-How I found the answer?, isolating the variable:
-
-```
-  2x > 10
-
-Divide by 2 in both sides:
-2x/2 > 10/2
-
-Reduce:
-  x > 5
-```
-
-Let's see the graph for `2x > 10`:
-
-![2_x_greater_than_10.png](../media/img/2_x_greater_than_10.png)
-
-> Note there is a vertical dotted line in 5, this means 5 is not included as part of the answer, but if the problem uses `≥` or `≤` the line will be solid because the value will be part of the solution, e.g. `2x ≥ 10`.
-
-> You can use https://www.desmos.com/calculator to generate this graph.
-
-Sometimes a number line is preferred since the y-axis is not needed:
-
-![2_x_greater_than_10_line.png](../media/img/2_x_greater_than_10_line.png)
-
-When using number a `filled circle` usually indicates that the endpoint is included in the solution set, in the image above an `open circle` means `5` is not included in the solution set, in other words, `5` is not a valid option, only values greater than `5`.
-
-> Image above was generated using https://quickmath.com/webMathematica3/quickmath/graphs/inequalities/basic.jsp#c=solve&v1=2x%253E10
+![Symmetric-matrix.png](../media/img/Symmetric-matrix.png)
 
 ![important.gif](../media/img/important.gif)
 
-**IMPORTANT**: If you ever need to **multiply** or **divide** by a **negative** number you MUST **reverse** the inequality sign.
-
-Example:
+**IMPORTANT**: The symmetric matrix is equal to its transpose:
 
 ```
-   -3x > 12
-
-Divide by -3 AND REVERSE THE SIGN:
--3x/-3 < 12/-3
-
-Reduce
-     x < -4
+A = A^T
 ```
 
-Test the result:
+### Diagonal Matrix
 
-> Use eny number less than `-4` (tip: `-4` is not an option because it is not less than `-4`, it is equal)
+A square matrix is called a diagonal matrix if nondiagonal entries are all zero, the main diagonal can be constants or zeros:
 
-```
-   -3x > 12
--3(-5) > 12
-    15 > 12
-```
+![diagonal-matrix.png](../media/img/diagonal-matrix.png)
 
-Reversing the sign of an inequality is called the inequality `mood swing.`
+### Identity Matrix
 
-### Compound Inequalities
+It is a symmetric matrix where every element along the main diagonal is 1, all other elements are 0.
 
-Compound inequalities are statements that express two inequalities:
+We usually use the `I` (upper case i) to denote this matrix and a subscript that represents the rows and columns (we just write one number since it is a square matrix):
 
-```
--2 < x ≤ 10
-```
+![identity_matrix.png](../media/img/identity_matrix.png)
 
-Statement above is read as "-2 is less than x, which is greater than 10"
+### Inverse Of A Matrix
 
-![minus_2_is_less_than_x_which_is_greater_or_equal_than_10.png](../media/img/minus_2_is_less_than_x_which_is_greater_or_equal_than_10.png)
-
-> To remember: `≥` and `≤` signs are inclusive, so you will see a filled circle.
-
-> Image above was generated here: https://quickmath.com/webMathematica3/quickmath/graphs/inequalities/basic.jsp#c=solve&v1=-2%253Cx%255Cle10
-
-#### Solving Compound Inequalities
-
-Compound inequalities have three parts, in order to isolate a variable you have to apply an operation in al three parts:
+The inverse of a matrix is another matrix that, when multiplied by the original matrix, yields the identity matrix
 
 ```
-   -16   <     2x + 4    <   24
-
-Subtract -4:
--16 -4   <   2x + 4 -4   <   24 -4
-
-Reduce
-   -20   <      2x       <   20
-  
-Divide by 2:
-  -20/2  <      2x/2     <   20/2
-
-Reduce
-    -10  <        x      <   10   ANSWER
+ A · B = I
+ B · A = I
 ```
 
-![minus_10_less_than_x_which_is_less_than_10.png](../media/img/minus_10_less_than_x_which_is_less_than_10.png)
+> This is the standard matrix multiplication **NOT** the hadamard product.
 
-> https://quickmath.com/webMathematica3/quickmath/graphs/inequalities/basic.jsp#c=solve&v1=-16%253C2x%2B4%253C24
-
-![important.gif](../media/img/important.gif)
-
-**IMPORTANT**: If you ever need to **multiply** or **divide** by a **negative** number you **MUST reverse BOTH** signs.
-
-### Inequalities With Absolute Values
-
-Inequalities with absolute values are solve differently if the sentence has a `greater than` or `less than` sign:
-
-When the inequality has the symbol `less than` (<), what we are looking for is to find the range of values of x that make the statement true:
+B is called the inverse of A and it is denoted as `A^-1`, so another way yo write the same is:
 
 ```
-|x-3| < 10
+  A · A^-1 = I
+  A^-1 · A = I
 ```
 
-In this example we can provide negative numbers tha satisfy the statement, e.g. `-6`, or positive numbers e.g. `10`, but if we provide a large negative number the absolute operation will change it into a large positive number, same if we provide a large positive number, so there's only one range between negative and positive numbers that satisfy the statement, therefore inequalities with `less than` sign needs to find that range.
-
-Solve it for `x`:
-
-```
-Rewrite the statement as a compound inequality, change the sign in the left of the statement:
--10 < x-3 < 10
-
-Now solve the compound inequality:
--10 < x-3 < 10
--10+3 < x < 10+3
--7 < x < 13
-```
-
-The solution is the resulting compound inequality:
-
-![minus_7_less_than_x_which_is_less_than_13.png](../media/img/minus_7_less_than_x_which_is_less_than_13.png)
-
-> See graph above at https://quickmath.com/webMathematica3/quickmath/graphs/inequalities/basic.jsp#c=solve&v1=%257Cx-3%257C%253C10
-
-When the inequality has the symbol `greater than` (>), there are typically parts of the number line for x that are discarded, so we use `or` to indicate that the solution can be in one part or another of the number line:
-
-> The result will be two inequalities joined with an `or`, in other words: a number needs to satisfy inequality 1 `or` inequality 2. This is because there's a section in the negative numbers that satisfy the inequality, there's also a section in the positive numbers tha satisfy the statement, but there's a section between them that does NOT satisfy the statement, so that's why we need two inequalities, one to satisfy the negative section and the other to satisfy the positive section, and the part in the middle that does not satisfy the statement is not added as part of the result.
-
-```
-|2x + 3| > 5
-
-Create two inequalities and solve them:
-2x + 3 > 5                                 -(2x + 3) > 5
-    2x > 5 -3                                 -2x -3 > 5
-    2x > 2                                       -2x > 5 + 3
-  2x/2 > 2/2                                     -2x > 8
-     x > 1        I REVERSED THE SIGN HERE👉  -2x/-2 < 8/-2
-                                                   x < -4
-
-Now combine the answers with and OR:
-
-x > 1 or x < -4
-```
-
-Let's see the graph:
-
-![x_less_than_minus_4_OR_x_greater_than_1.png](../media/img/x_less_than_minus_4_OR_x_greater_than_1.png)
-
-> See graph above at https://quickmath.com/webMathematica3/quickmath/graphs/inequalities/basic.jsp#c=solve&v1=%257C2x%2B3%257C%253E5
-
-You can see by the graph tha using an `or` is required since there's a section in the number line that we want to exclude, this part are numbers that does NOT make the expression greater than the value.
-
-## Inequalities With Two Variables
-
-```
-2x – 3y < 12
-```
-
-Imagine the less than sign is an equal sign and solve it as if it was an equation:
-
-```
-2x – 3y = 12
-2x = +3y +12
-2x -12 = 3y
-(2x -12)/3 = y
-(2/3)x -4 = y    This is the slope-intercept form
-```
-
-Now let's plot this equation:
-
-![](../media/img/2_over_3_x_minus_4_equals_y.png)
-
-You can see the line splits the coordinate plane in two regions, you can select any point from these regions and see which one satisfy the inequality, (0,0) seems to be the easier point for the region on the top:
-
-```
-    2x – 3y < 12
-2(0) – 3(0) < 12
-          0 < 12
-```
-
-There you go, any point in the top region satisfy the statement, you can shade this region to make it more clear:
-
-![2_x_minus_3_y_less_than_12.png](../media/img/2_x_minus_3_y_less_than_12.png)
-
-## Systems Of Equations
-
-A system of equations is a collection of two or more equations.
-
-### The Substitution Method
-
-There are a few ways to solve systems of equations, the `substitution method` can be used to solve any system, let's see this method with a practical example:
-
-Toretto is chasing an assassin. 🚗💨
-
-- The assassin is going at A `150 km/h`, or `2.5 km/min`
-- Toretto is going at `180 km/h`, or`3 km/h` and started to run `5 min later`.
-
-**How long will it take Toretto to catch up with the assassin?**
-
-Equation the assassin:
-
-```
-m = 2.5
-point = (0,0)
-
-Using point-slope form:
-y-y₁ = m(x-x₁)
-y-0 = 2.5(x-0)
-y = 2.5x
-```
-
-Equation for Toretto:
-
-```
-m = 3
-point = (5,0)    5 in x-axis because it started 5 minutes later
-
-Using point-slope form:
-y-y₁ = m(x-x₁)
-y-0 = 3(x-5)
-y = 3x-15
-```
-
-System of equations are usually written with a left brace:
-
-![systems_of_equations_toretto_left_brace.png](../media/img/systems_of_equations_toretto_left_brace.png)
-
-> Image above was generated using latex at http://www.tlhiv.org/ltxpreview/
-
-Let's see the graph for this system of equations:
-
-![systems_of_equations_toretto.png](../media/img/systems_of_equations_toretto.png)
-
-> Red line is Toretto and blue line is the assassin.
-
-> TIP: if the equations never cross then there is no solution. Check the slope and also check if they overlap, if both have the same slope and overlap then there are infinite solutions, if the slope is the same but they do not overlap then there is not solution.
-
-The substitution method is about solving one equation and then plug the result into the other equation, let's take `3x-15 = y` and substitute `y` with the other equation `2.5x`:
-
-```
-  3x-15 = 2.5x
-Reduce:
-      3x = 2.5x +15
-3x -2.5x = +15
-    0.5x = 15
-       x = 15/0.5
-       x = 30
-```
-
-Answer: Toretto is going to catch up to the assassin in `30` minutes.
-
-If you want to know the green spot in the chart then:
-
-```
-   3x-15 = y
-3(30)-15 = y
-   90-15 = y
-      75 = y
-```
-
-So there you have it: `(30, 75)` is the solution for the system of equations.
-
-
-Example 2:
-
-```
-  ,- 
- _|   2x -5y = 20
-  |   x -y = 40
-  `- 
-```
-
-Using the standard form is an easier way to see how we plug one equation into another:
-
-We just need to see which equation is easier to solve for `y`, in this case `x-y = 40` is easier to solve so let's do it:
-
-```
-x -y = 40
-  -y = 40 -x
-   y = -40 +x
-```
-
-Now let's plug the **result** into the other equation:
-
-```
-2x -5y = 20
-2x -5(-40 +x) = 20
-```
-
-And now resolve for `x`:
-
-```
-2x -5(-40 +x) = 20
-  2x +200 -5x = 20
-       2x -5x = 20 -200
-       2x -5x = -180
-          -3x = -180
-       -3x/-3 = -180/-3
-            x = 60
-```
-
-`60` is the value for the x-axis, now let's use any equation to find the value for `y`:
-
-```
-y = -40 +x
-y = -40 +60
-y = 20
-```
-
-SOLUTION for the system: `(60, 20)`
-
-
-### The Elimination Method
-
-The elimination method involves adding or subtracting equations in order to eliminate one of the variables, making it easier to solve for the remaining variables.
-
-Let's solve the same system of the previous section but this time using the elimination method:
-
-```
-  ,- 
- _|   2x -5y = 20
-  |   x -y = 40
-  `- 
-```
-
-Let's multiply the second equation by 5:
-
-```
-  ,- 
- _|   2x -5y = 20
-  |   5(x -y) = 5(40)
-  `- 
-```
-
-Reduce:
-
-```
-  ,- 
- _|   2x -5y = 20
-  |   5x -5y = 200
-  `- 
-```
-
-Now we can subtract:
-
-```
-2x -5y - (5x -5y) = 20 - 200
-2x -5y - 5x +5y = -180
-2x - 5x = -180
--3x = -180
--3x/-3 = -180/-3
-x = 60
-```
-
-There you go.
-
-You can take a different approach and `add` instead of subtract:
-
-```
-  ,- 
- _|   2x -5y = 20
-  |   x -y = 40
-  `- 
-```
-
-Let's multiply the second equation by `-2`:
-
-```
-  ,- 
- _|   2x -5y = 20
-  |   -2(x -y) = -2(40)
-  `- 
-```
-
-Reduce:
-
-```
-  ,- 
- _|   2x -5y = 20
-  |  -2x +2y = -80
-  `- 
-```
-
-Now let's sum the equations:
-
-```
-     2x -5y = 20
- +  -2x +2y = -80
-    --------------
-        -3y = -60
-      =   y =  20
-```
-
-To find `x` just plug the value of `y` in any equation:
-
-```
-x -y = 40
-x -20 = 40
-x = 40 + 20
-x = 60
-```
-
-You can add or subtract equation depending on your approach.
-
-## Systems With No Solutions
-
-Let's say you have to parallel equations without overlapping each other:
-
-```
-  ,- 
- _|   2x -3y = 20
-  |   6x -9y = 30
-  `- 
-```
-
-You can convert those equations into its slope-intercept form (by isolating `y`) and there you can easily find the slope by seeing the coefficient of `x`, a trick to find the slope is `m=A/B` for `Ax + By = C`.
-
-In this system of equations the slope is `1/2` for both equations, and also the equations do not overlap.
-
-If you try to use the elimination method you will end up with no variables:
-
-```
-  Multiply by 3:
-  ,- 
- _|   3(2x -3y) = 20
-  |   6x -9y = 30
-  `- 
-  Reduce:
-  ,- 
- _|   6x -9y = 20
-  |   6x -9y = 30
-  `- 
-```
-
-If you subtract you will delete all variables, this is just another sign that the system of equations does not have a solution.
-
-## Systems Of Inequalities
-
-![systems_of_inequalities.png](../media/img/systems_of_inequalities.png)
-
-Systems of inequalities are threated pretty much the same as in section [Linear Inequalities](#linear-inequalities), you just need to graph both inequalities and the answer will be the overlap between the inequalities.
-
-## Tensors
-
-Tensors are the most common data structure used in Machine Learning.
-
-A popular Python library to work with tensors is called `Tensorflow`. https://www.tensorflow.org
-
-### What Is A Tensor
-
-In simple words, tensors are arrays of numbers.
-
-Tensors are classified depending on the amount of dimensions.
-
-![shape_of_tensor.jpg](../media/img/shape_of_tensor.jpg)
-
-> When we have more than two indices to refer to a specific element in a data structures (or mathematical, structure) we stop treating them with special names like scalars, vectors, matrices etc. Instead we address them with a more generalized language, tensors.
-
-Let's see an example of each one using Python:
-
-```
-scalar = 4
-
-vector = [1, 2, 3]
-
-matrix = [
-  [1, 2, 3]
-  [4, 5, 6],
-  [7, 8, 9]
-]
-
-threeTensor = [
-  [[1, 2], [3, 4]],
-  [[5, 6], [7, 8]]
-]
-```
-
-## Matrix
-
-![the_matrix_has_you.webp](../media/img/the_matrix_has_you.webp)
-
-A matrix is a collection of `elements` arranged in `rows` and `columns`.
-
-The `order` of a matrix describes how many rows and columns a matrix have, e.g. a matrix of order 3x5 (three by five) has 3 rows and 5 columns.
-
-Matrix are typically displayed surrounded by big brackets:
-
-![example_matrix_3_by_5.png](../media/img/example_matrix_3_by_5.png)
-
-> This image was generated at http://www.tlhiv.org/ltxpreview/ with this file [example_matrix_3_by_5.tex](../scripts/latex/example_matrix_3_by_5.tex)
-
-Image above shows:
-
-- The matrix ***A***, you can use any letter to named a matrix.
-- In algebra the letter used to represent a matrix **is typically in bold, uppercase and italic** so it can be distinguished from other types of variables.
-- The position of each element is identified with a subscript where the first number is the row, and the second is the column.
-- Typically, the same letter used to represent the entire matrix is used to represent a specific element but in lowercase.
-- Instead of `x` and `y`, as in the cartesian plane, we use `i` and `j` when talking about matrices.
-
-When talking about a matrix of unkown order this `m by n` is used:
-
-![m_by_n_matrix.png](../media/img/m_by_n_matrix.png)
-
-> This image was generated at http://www.tlhiv.org/ltxpreview/ with this file [m_by_n_matrix.tex](../scripts/latex/m_by_n_matrix.tex)
-
-💡 When a matrix has the same number of rows and column is called `square matrix`.
-
-When you want to refer to a specific element in the matrix you need to use the subscript e.g. `a₂,₁`.
-
-Matrices are typically composed of elements that belong to a common field, such as real numbers, complex numbers, or integers. Mixing different types of numbers within a single matrix isn't inherently invalid, but it may not always make sense depending on the context of the problem you're working on.
-
-Anyways, math teachers like to create this type of scenarios to test your abilities:
-
-![matrix_with_mixed_real_numbers.png](../media/img/matrix_with_mixed_real_numbers.png)
-
-> This image was generated at http://www.tlhiv.org/ltxpreview/ with this file [matrix_with_mixed_real_numbers.tex](../scripts/latex/matrix_with_mixed_real_numbers.tex)
+Not all matrices have inverses.
+  - A matrix must be square (have the same number of rows and columns)
+  - and be `non-singular` (its determinant must be non-zero) to have an inverse.
+
+Let's see an example with Python:
+
+  ```python
+  >>> A = np.array([[4,-10], [3,2]])
+  >>> # Let's check if the determinant is non-zero:
+  >>> np.linalg.det(A)
+  37.99999999999999
+  >>> # let's see if this other matrix is the inverse:
+  >>> AInverse = np.array([[1/19,5/19], [-3/38, 2/19]])
+  >>> np.dot(A, AInverse)
+  array([[1., 0.],
+        [0., 1.]])
+  >>>
+  >>> np.dot(AInverse, A)
+  array([[1., 0.],
+        [0., 1.]])
+  >>>
+  ```
 
 ### Matrix Operations
 
@@ -1242,6 +162,18 @@ When you multiply a matrix by a scalar, you simply multiply each element of the 
 ![matrix_miltiplied_by_scalar.png](../media/img/matrix_multiplied_by_scalar.png)
 
 > This image was generated at http://www.tlhiv.org/ltxpreview/ with this file [matrix_multiplied_by_scalar.tex](../scripts/latex/matrix_multiplied_by_scalar.tex)
+
+Using Numpy:
+
+```python
+>>> import numpy as np
+>>> A = np.array([[2,5,2,2,9], [4,2,3,7,3], [3,1,1,6,8]])
+>>> -2*A
+array([[ -4, -10,  -4,  -4, -18],
+       [ -8,  -4,  -6, -14,  -6],
+       [ -6,  -2,  -2, -12, -16]])
+>>> 
+```
 
 #### Adding And Subtracting Matrices
 
@@ -1330,6 +262,15 @@ The cramer's rule uses determinants to solve systems of linear equations.
 
 - Basically you need to find the determinant in the numerator and divide the result by the determinant in the denominator.
 
+Calculate the determinant using Python:
+
+  ```python
+  >>> A = np.array([[2,3], [4,-1]])
+  >>> np.linalg.det(A)
+  -14.000000000000004
+  >>> 
+  ```
+
 ### Vectors
 
 A vector is a mathematical object that represents a quantity with both `magnitude` and `  `.
@@ -1363,6 +304,78 @@ Or N dimensional objects.
 The dot product of two vectors is a scalar quantity obtained by multiplying corresponding components of the vectors and then summing up these products.
 
 ![dot_product.png](../media/img/dot_product.png)
+
+> Note: numpy use the dot method for `matrix multiplication`, for some reason they use that name but mathematically speaking, dot product is what is mentioned above.
+
+### EigenVectors and EigenValues
+
+**Some** matrices have associated vectors than when multiplied by the matrix they are only stretched or shrunk but not rotated. These vector are called `eigenvectors`.
+
+The value that stretches or shrinks the vector is a scalar value called `eigenvalue`.
+
+> Eigen is German for "typical", we could translate eigenvector to `characteristic vector`.
+
+Eigenvectors and eigenvalues satisfy the following equation:
+
+```
+Av=λv
+```
+
+Where:
+
+- `A` is the matrix
+- `v` is the eigenvector
+- `λ` lambda, it is the eigenvalue
+
+
+
+Example:
+
+Import Pytorch:
+
+```python
+import torch
+```
+
+> PyTorch is an open-source deep learning framework that’s known for its flexibility and ease-of-use. This is enabled in part by its compatibility with the popular Python high-level programming language favored by machine learning developers and data scientists. 
+
+Create matrix A:
+
+```python
+A = torch.tensor([[25., 2., 9.], [5., 26., -5.], [3., 7., -1.]])
+```
+
+Calculate eigenvector and eigenvalues:
+
+```python
+eValues, eVectors = torch.linalg.eig(A)
+```
+
+In some scenarios the items are complex numbers, let's cast the values just to keep the example simple:
+
+```python
+eValues = eValues.float()
+eVectors = eVectors.float()
+```
+
+Finally check if `Av=λv`:
+
+```python
+print("Av=", torch.matmul(A, eVectors[:,0]))
+print("λv=", eValues[0]*eVectors[:,0])
+```
+
+> note we are multiplying only for one of the eigenvectors and one of the eigenvalues
+
+Output:
+
+```
+Av= tensor([21.1223, 19.7798,  6.5792])
+λv= tensor([21.1223, 19.7798,  6.5792])
+```
+
+
+Full code is available at [eigenvectors.py](../scripts/eigenvectors.py)
 
 ## Polynomials
 
@@ -1469,6 +482,8 @@ Important:
 Just to remember: A factor is a number that divides evenly into a number and leaves behind no reminder, e.g. the factors of 10 are 10, 5, 2, and 1.
 
 Factoring a polynomial means finding the smaller expressions that, when multiplied together, give you the original polynomial. 
+
+IN SIMPLE WORDS: Factoring a polynomial means expressing it as the product of simpler polynomials, called factors.
 
 Example:
 
@@ -1580,6 +595,12 @@ These are some patterns that help you factorize faster:
   2. 2 times the product of both terms
   3. second term to the power of 2
 
+  Another example:
+
+  ```
+  x² -6x +9 = (x-3)²
+  ```
+
 - `Difference of perfect square`: here is a rule for this case:
   ```
   (a²-b²) = (a+b)(a-b)
@@ -1656,6 +677,653 @@ These are some patterns that help you factorize faster:
   Reduce:
   2(8x³ -y³) = 2[(2x + y)(4x² - 2xy + y²)]
   ```
+
+## Factoring Trinomials Using Coefficients
+
+The next techniques is used to factor trinomials whose leading coefficient is `1`:
+
+```
+x² + ax + b
+```
+
+> The leading coefficient in a polynomial is the coefficient of the term with the highest degree,
+
+> Where `a` and `b` are constants.
+
+> You can see the leading coefficient for `x²` is `1`.
+
+In order to factor a trinomial like this, you need you need to find `2` numbers:
+
+```
+x² + ax + b = (x + ?₁)(x + ?₂)
+```
+
+The `sum` of these numbers must be equal to `a`
+
+The `product` of these numbers must be equal to `b`
+
+- Example: `x² + 6x + 8`
+
+  You need to play and find `?₁` and `?₂`:
+
+  ```
+  x² + ax + b = (x + 2)(x + 4)
+  ```
+
+- Another example: `x² + 6x - 16`
+
+  You need to play and find `?₁` and `?₂`:
+
+  ```
+  x² + ax + b = (x + 8)(x - 2)
+  ```
+
+  > Note one binomial has a negative sign
+
+## Factoring By Decomposition
+
+> If a polynomial cannot be factored is considered prime.
+
+```
+ax² + bx + c   =   ax² + (?₁ + ?₂)x + c
+```
+
+Where
+
+```
+?₁ + ?₂ = b
+and
+?₁ * ?₂ = ac
+```
+
+Steps:
+
+1. Find the GCF if exist.
+2. Find `?₁` and `?₂`.
+3. Replace `?₁` and `?₂`
+4. Distribute.
+5. Factor by grouping
+
+Example: `4x² + 23x -6`
+
+```
+?₁ + ?₂ = 23
+?₁ * ?₂ = -24
+
+∴ ?₁=24  ?₂=-1
+```
+
+Replace and distribute:
+
+```
+4x² + (24 - 1)x + -6
+4x² + 24x -x + -6
+```
+
+Factor by grouping:
+
+```
+4x² + 24x -x + -6
+
+(4x² + 24x)/(4x) = x + 6
+∴ (4x² + 24x) = (4x)*(x + 6)
+
+
+4x² + 24x -x + -6  =  (4x)*(x + 6) -x -6
+4x² + 24x -x + -6  =  (4x)*(x + 6) -(x +6)
+
+[(4x)*(x + 6) -(x +6)]/(x +6) = 4x -1
+[(4x)*(x + 6) -(x +6)] = (x +6)(4x -1)
+```
+
+Then:
+```
+(x +6)(4x -1) = 4x² + 23x -6
+```
+
+Another example:
+
+```
+3x² +14x -24
+= ax² + (?₁ + ?₂)x + b 
+= 3x² + (?₁ + ?₂)x -24
+
+Rules:
+?₁ + ?₂ = b = 14
+and
+?₁ * ?₂ = ac = -72
+
+therefore:
+?₁ = -4
+?₂ = 18
+
+= 3x² + (-4 + 18)x -24
+= 3x² -4x + 18x -24
+= x(3x -4) + 6(3x -4) 
+= (x+6)(3x -4) 
+
+Now solve the equations:
+x+6, then x = -6
+
+3x -4, then x = 4/3
+
+solution x=-6 or x=4/3
+```
+
+## Radicals
+
+A radical expression looks like this:
+
+![radical_expression.png](../media/img/radical_expression.png)
+
+> This is read as `the ath root of b`
+
+Radicals with index `2`, aka `square root`, are so common that usually is not written, so whenever you see a radical with no index you must assume is of index `2`.
+
+> Just for your reference. the 3th root of b is also know as the `cube root of b`
+
+### Rewriting Radicals
+
+Radicals can be expressed as exponents:
+
+![rewrite_radicals.png](../media/img/rewrite_radicals.png)
+
+Let's see this in python:
+
+```python
+>>> from math import sqrt
+>>> sqrt(25)
+5.0
+>>> 25**(1/2)
+5.0
+>>>
+```
+
+> In the script above the square root of 25 was calculated with the build in math.sqrt function and with the exponent syntax.
+
+### Simplifying Radicals
+
+The Nth root of a product is equal to the product of the Nth roots of each term. This property is often used in mathematics when dealing with radicals or roots. It can be expressed as:
+
+```
+√(ab) = √a * √b
+```
+
+- Let's see an example where we can use this property to simplify an expression:
+
+  ```
+  ³√16x⁴y⁶
+  ```
+
+  Let's start by factoring the radicands coefficients, we need factor to be powers of the index, `3` in this case:
+
+  ```
+  2³2 = 16
+  and x³*x = x⁴
+  and y⁶ = (y²)³
+  ∴
+  ³√16x⁴y⁶  =  ³√2³2 (x³*x) (y²)³
+  ```
+
+  Now let's move all the pieces in the radicand that have `³` in front of the radical, also remove the power:
+
+  ```
+  ³√16x⁴y⁶  =  (2xy²)(³√2x)
+  ```
+
+  ![simplifying_radicals.png](../media/img/simplifying_radicals.png)
+
+- Another Example:
+
+```
+√16x²
+```
+
+Let's find a factor for `16` so it will have a square power:
+
+```
+√4²x²
+```
+
+Now we can remove the radical symbol:
+
+```
+√16x² = |4x|      <- NOTE THE ABSOLUTE SIGNS
+```
+
+**IMPORTANT**: Wonder why the result is an absolute expression?, answer: you always want positive answers for even-powered roots, therefore the absolute signs make that.
+
+### Radical Operations
+
+- Addition
+  ```
+  √16x + √16x = 2√16x 
+  ```
+  
+  Addition and subtraction of radicals works only if both terms have the same radicand and index.
+
+- Subtraction
+
+  If the terms doesn't look similar then you can rewrite the terms and see if that works:
+
+  ```
+  4√16x - √256x = ?
+
+  rewrite second term:
+    4√16x - √256x
+  = 4√16x - √16²x
+  = 4√16x - 16√x = -12√x
+  ```
+
+- Multiplication
+
+  Product of matching index can be rewritten as:
+  ```
+  (n√x)(n√y) = n√xy
+  ```
+
+- Division
+
+  ```
+  (n√x)
+  ----- = n√(x/y)
+  (n√y) 
+  ```
+
+## Solving Radical Equations
+
+When solving equations with radicals, you can often simplify the equation by raising both sides to a power that eliminates the radical. For example:
+
+```
+ ³√(2x-1) +3 = 6
+ ³√(2x-1) = 6 -3
+ ³√(2x-1) = 3
+[³√(2x-1)]³ = 3³
+   (2x-1) = 27
+    2x = 27 +1
+    2x = 28
+     x = 28/2
+     x = 14
+```
+
+In this example both side were elevate to the third power to eliminate the cube root.
+
+This technique also works in reverse, you can cancel out exponents by adding a radical:
+
+```
+Solve 5x3 -135 = 0
+
+5x³ -135 = 0
+     5x³ = 135
+      x³ = 135/5
+      x³ = 27
+    ³√x³ = ³√27
+       x = 3
+```
+
+**IMPORTANT**: if you cancel an EVEN exponent by adding a radical with the same index then the result must have the sign `±`, example:
+
+```
+ x² = 25
+√x² = √25
+  x = ±5
+```
+
+### Negative Radicals
+
+Two scenarios:
+
+1. A radical with an `odd index` and a  `negative radicand`:
+
+  ```
+    ³√-8x³
+  = (³√-8)(³√x³)
+  = (³√-8)(³√x³)
+  = (³√-8)x
+  = (³√-2³)x
+  =    -2x
+  ```
+
+  Since the exponent is an odd number is totally fine to leave it negative, because if you multiply a negative number N odd times you will always get a negative result:
+
+  ```
+  (-x)^(odd number) = negative number
+  ```
+
+
+2. A radical with even index and positive radicand:
+
+```
+√-16
+```
+
+In this case is hard to find a single number that when multiplied two time gives a negative number.
+
+In this case we need to work with `IMAGINARY NUMBERS`.
+
+The letter `i` is used to represent the radical `√-1` and is used to give a solution to problems like `√-16`.
+
+> **Note: since `i = √-1` then `i² = -1`**
+
+> `i` stands for imaginary.
+
+Imaginary numbers are a subdivision of the complex numbers, we can combine Real numbers and imaginary numbers and create something called `complex` number (not so original):
+
+```
+a + bi
+```
+
+Where `a` and `b` are Real numbers.
+
+Examples:
+
+```
+3 + 8i
+
+or
+
+0 + 1i    = i
+
+or
+
+0 + 3i    = 3i
+```
+
+#### Conjugate
+
+Any imaginary number has a conjugate, the conjugate is equal to the imaginary number but the imaginary part has its sign changed:
+
+```
+a + bi
+```
+
+conjugate:
+
+```
+a - bi
+```
+
+> In simpler terms, the conjugate of an imaginary number is like its "reflection" over the real axis in the complex plane.
+
+![conjugate.png](../media/img/conjugate.png)
+
+Let's use imaginary numbers to solve the exercise `√-16`:
+
+
+```
+  √-16
+= √(-1*16)
+= (√-1)(√16)
+= (i)(4)
+= 4i
+```
+
+One final example, resolve `i⁵`:
+
+```
+i⁵ = i² * i² * i
+i⁵ = -1 * -1 * i
+i⁵ = +1i
+i⁵ = +i
+```
+
+## Quadratic Equations And Inequalities
+
+### Solving by factoring
+
+When possible, factoring a quadratic polynomial is the easiest option to solve an equation.
+
+Steps:
+
+1. Set the equation equal to 0 by moving all terms to one side of the equation.
+2. Factor the polynomial
+3. Seat each factor equal to 0, separate these equations with the word "or" since one of them could be true. This is know as `zero product property`, in simple words, if you multiply two quantities (factors in this case) and the result is 0, then at least one of the quantities is 0, therefore we need to add a `or` so at least one equation is really equal to 0.
+4. Solve the equations, both solutions are solutions for the original equation.
+
+Example:
+
+```
+x² -6x +9 = 0
+```
+
+We can use [Factoring trinomial using coefficients](#factoring-trinomials-using-coefficients) since the leading coefficient is 1:
+
+```
+  x² -6x +9 = 0
+
+= (x + something1)(x + something2)
+```
+
+where
+- `something1 + something2 = -6`
+- `and something1 * something2 = 9`
+
+Then:
+
+```
+ x² -6x +9 = 0
+
+ = (x -3)(x -3)
+```
+
+So our equations will be:
+
+```
+x -3=0    or     x -3=0
+```
+
+Solve them:
+
+```
+x = 3     or       x = 3
+```
+
+Since both result are the same then the solution to `x² -6x +9 = 0` is `3`:
+
+```
+  x² -6x +9 = 0
+3² -6(3) +9 = 0
+   9 -18 +9 = 0
+          0 = 0
+```
+
+> When the solution is the same for both equations it is know as `double root`.
+
+### Completing The Square
+
+Solve `2x² -16x +10 = 0`
+
+1. Make the leading coefficient `1`:
+
+```
+2x² -16x +10 = 0
+(2x² -16x +10)/2 = 0/2
+       x² -8x +5 = 0
+```
+
+2. Move everything to the left except for the constant:
+
+```
+       x² -8x +5 = 0
+          x² -8x = -5
+```
+
+3. Take the coefficient of `x¹`, in this case `-8`, dived it by `2` and square the result:
+
+```
+-8/2 = -4
+Square the result: (-4)² = 16
+```
+
+4. Add the result for the previous step in both sides:
+
+```
+x² -8x +16 = -5 +16
+x² -8x +16 = 11
+```
+
+5. The result can be factored using the Perfect binomial square:
+
+> Reminder: A perfect square binomial is a trinomial that when factored gives you the square of a binomial, example
+
+```
+x² -8x +16 = 11
+
+let's use the Perfect binomial square to factor the left side:
+
+x² -8x +16 = (x -4)²
+
+Now rewrite the equation:
+(x -4)² = 11
+```
+
+6. We can remove the exponent `²` by adding a square radical in both sides:
+
+```
+(x -4)² = 11
+√(x -4)² = ±√11
+x -4 = ±√11
+
+And at this point we can solve the equation:
+x -4 = ±√11
+   x = ±√11 + 4
+```
+
+Let's check our result:
+
+```
+        (x -4)² = 11
+((±√11 + 4) -4)² = 11
+  (±√11 + 4 -4)² = 11
+         (±√11)² = 11
+             11 = 11
+
+```
+
+### The Quadratic Formula
+
+The quadratic formula is a handy tool for finding the solutions (roots) of a quadratic equation.
+
+![quadratic_forfmula.png](../media/img/quadratic_forfmula.png)
+
+The ± symbol means you'll have two solutions:
+
+- one where you add the square root
+- and one where you subtract it.
+
+Example:
+
+![quadratic-formula-example.jpg](../media/img/quadratic-formula-example.jpg)
+
+In the image above the same equation was solved using [Solving by factoring](#solving-by-factoring) on the left, and solved using the quadratic formula on the right.
+
+#### Discriminant
+
+The `b²-4ac` in the quadratic formula is called the `discriminant`, it determines how many solutions a given quadratic equation has.
+
+- If the discriminant is a positive number then the equation has 2 solutions.
+- If the discriminant is 0 then the equation has 1 solution (double root).
+- If the discriminant is a negative number then the equation has no real solution, just two imaginary ones.
+
+You can determine the solutions of a quadratic equation by calculating the discriminant first.
+
+## One-variable Quadratic Inequalities
+
+```
+2x² +x -2 < 0
+```
+
+1. Pretend the inequality is an equality and solve the equation:
+
+```
+2x² +x -2 = 0
+
+Completing the square:
+    2x² +x -2 = 0
+(2x² +x -2)/2 = 0/2
+x² +(1/2)x -1 = 0
+  x² +(1/2)x  = 1
+now add half of the coefficient of the x and square it:
+  x² +(1/2)x +(1/4)²  = 1
+    x² +(1/2)x +1/16  = 1
+    (x + 1/4)(x + 1/4)  = 1
+             (x + 1/4)² = 1
+            √(x + 1/4)² = ±√1
+                x + 1/4 = ±1
+                      x = ±1 - 1/4
+Result 1:
+  x₁ = +1 - 1/4
+  x₁ = 3/4
+Result 2:
+  x₂ = -1 - 1/4
+  x₂ = -5/4
+```
+
+> The result in the result are called `critical numbers`
+
+2. The critical number will split the numbered line into `intervals`
+
+![one_variable_quadratic_inequalities.png](../media/img/one_variable_quadratic_inequalities.png)
+
+You can see the critical point divides the number line in three segments.
+
+3. Choose one value from each segment and plug it into the original **inequality**, if the value makes the inequality true then the whole segment is part of the solution:
+
+```
+Segment 1:
+2(-4)² +(-4) -2 < 0
+             26 < 0
+
+Segment 2:
+2(-1)² +(-1) -2 < 0
+             -1 < 0
+
+Segment 3:
+2(2)² +(2) -2 < 0
+             8 < 0
+```
+
+The only segment that makes the inequality true is the second segment.
+
+> Note `x₁` and  `x₂` are solid circles in the graph, which mean they are part of the solution.
+
+Solution:
+
+-5/4≤ x ≤ 3/4
+
+![one_variable_quadratic_inequalities_solution.png](../media/img/one_variable_quadratic_inequalities_solution.png)
+
+## High Powered Equations
+
+
+```
+x³ -6x² +5x +12
+```
+
+Finding factors, demonstrate `x-3` is factor of the equation above:
+
+```
+
+3 |   1   -6   5   12
+---
+           3  -9   -12
+      ----------------
+      1   -3   -4   0
+
+
+∴
+x³ -6x² +5x +12 = (x-3)(x² -3x -4)
+Perfect binomial square:
+                = (x-3)(x-4)(x+1)
+```
+
+To solve the equation (x−3)(x−4)(x+1)=0(x−3)(x−4)(x+1)=0, you can set each factor equal to zero and solve for xx.
+
+- Set `x−3=0` and solve for `x`. This gives you one solution, `x=3`.
+- Set `x−4=0` and solve for `x`. This gives you another solution, `x=4`.
+- Set `x+1=0` and solve for `x`. This gives you the third solution, `x=−1`.
+
+
 
 superscript: ⁰¹²³⁴⁵⁶⁷⁸⁹
 subscript: ₀₁₂₃₄₅₆₇₈₉

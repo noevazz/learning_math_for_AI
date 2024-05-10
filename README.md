@@ -2,14 +2,14 @@
 
 - [Foundations](./units/foundations.md)
 - [Algebra](./units/algebra.md)
-- Probability and statistics
-
-- Calculus
-- Differential Calculus
-- Integral calculus
-- Differential equations
-- Numerical analysis
+- [Trigonometry](./units/trigonometry.md)
+- [Calculus](./units/calculus.md)
+- [Probability and statistics](./units/probability_and_statistics.md)
 
 
-Principal Component Analysis (PCS)
+
+Numerical analysis
+
+
+Principal Component Analysis (PCA)
 Singular Value Decomposition (SVD)
