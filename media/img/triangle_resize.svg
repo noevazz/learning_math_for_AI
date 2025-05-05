@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="215.71942mm"
+   height="211.30583mm"
+   viewBox="0 0 215.71942 211.30583"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="triangle_resize.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.4069336"
+     inkscape:cx="421.44467"
+     inkscape:cy="334.20686"
+     inkscape:window-width="1293"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="416"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:snap-page="true" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(17.90215,-43.149328)">
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+       id="rect18255"
+       width="215.71942"
+       height="211.30583"
+       x="-17.902149"
+       y="43.149326"
+       ry="11.053195" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 137.08038,96.664464 V 126.11428 H 197.2605 Z"
+       id="path857" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 76.407392,66.362436 V 126.09975 H 197.49757 Z"
+       id="path857-5" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="54.128147"
+       y="88.100464"
+       id="text4343"><tspan
+         sodipodi:role="line"
+         id="tspan4341"
+         style="stroke-width:0.264583"
+         x="54.128147"
+         y="88.100464"></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#de1717;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="171.16675"
+       y="124.42172"
+       id="text6127"><tspan
+         sodipodi:role="line"
+         id="tspan6125"
+         style="fill:#de1717;fill-opacity:1;stroke-width:0.264583"
+         x="171.16675"
+         y="124.42172">θ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-15.838831"
+       y="91.840942"
+       id="text8337"><tspan
+         sodipodi:role="line"
+         id="tspan8335"
+         style="stroke-width:0.264583"
+         x="-15.838831"
+         y="91.840942">opposite</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="142.09381"
+       y="136.59264"
+       id="text9255"><tspan
+         sodipodi:role="line"
+         id="tspan9253"
+         style="stroke-width:0.264583"
+         x="142.09381"
+         y="136.59264">adjacent</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="126.92138"
+       y="88.534966"
+       id="text11231"><tspan
+         sodipodi:role="line"
+         id="tspan11229"
+         style="stroke-width:0.264583"
+         x="126.92138"
+         y="88.534966">Hypotenuse</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 31.457525,43.954303 V 126.09409 H 197.59567 Z"
+       id="path12235" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 28.856773,159.68776 v 29.44982 h 60.18012 z"
+       id="path12273" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 28.856773,159.68776 v 59.73732 H 149.94695 Z"
+       id="path12275" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#de1717;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="30.401051"
+       y="173.83601"
+       id="text12279"><tspan
+         sodipodi:role="line"
+         id="tspan12277"
+         style="fill:#de1717;fill-opacity:1;stroke-width:0.264583"
+         x="30.401051"
+         y="173.83601">θ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-18.439583"
+       y="207.57449"
+       id="text12283"><tspan
+         sodipodi:role="line"
+         id="tspan12281"
+         style="stroke-width:0.264583"
+         x="-18.439583"
+         y="207.57449">adjacent</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="139.49306"
+       y="252.3261"
+       id="text12287"><tspan
+         sodipodi:role="line"
+         id="tspan12285"
+         style="stroke-width:0.264583"
+         x="139.49306"
+         y="252.3261">opposite</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="124.32059"
+       y="204.26866"
+       id="text12291"><tspan
+         sodipodi:role="line"
+         id="tspan12289"
+         style="stroke-width:0.264583"
+         x="124.32059"
+         y="204.26866">Hypotenuse</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 28.856773,159.68776 v 82.13979 H 194.99492 Z"
+       id="path12293" />
+  </g>
+</svg>
