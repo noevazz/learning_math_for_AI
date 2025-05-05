@@ -1,8 +1,8 @@
 # LEARNING MATH FOR ARTIFICIAL INTELLIGENCE
 
 - [Foundations](./units/foundations.md)
-- [Algebra](./units/algebra.md)
-- [Trigonometry](./units/trigonometry.md)
+- [Algebra](./units/algebra.ipynb)
+- [Trigonometry](./units/trigonometry.ipynb)
 - [Calculus](./units/calculus.md)
 - [Probability and statistics](./units/probability_and_statistics.md)
 
